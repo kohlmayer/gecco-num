@@ -1,1 +1,4 @@
 /.project
+/compose/db/data/**
+/compose/app/logs/**
+/compose/.env
