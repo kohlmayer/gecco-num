@@ -1,0 +1,37 @@
+version: '3'
+services:
+    tomcat:
+        restart: always
+        image: kohlmayer/tomcat-dis-gecco:${VERSION}
+        container_name: ${COMPOSE_PROJECT_NAME}-tomcat
+        env_file: 
+            - .env
+        privileged: true # necessary for webdav
+        cap_add: # necessary for webdav
+            - SYS_ADMIN
+        volumes:
+            - ${BASE_PATH}/${COMPOSE_PROJECT_NAME}/app/logs:/usr/local/tomcat/logs
+            - ${BASE_PATH}/${COMPOSE_PROJECT_NAME}/app/disconf:/usr/local/tomcat/disconf
+            - ${BASE_PATH}/${COMPOSE_PROJECT_NAME}/disfiles:/disfiles
+            - ${BASE_PATH}/${COMPOSE_PROJECT_NAME}/keystore/myTrustStore:/usr/local/tomcat/myTrustStore:ro
+        ports:
+            - "443:8443"
+        networks:
+            - backend
+
+    mysql:
+        restart: always
+        image: kohlmayer/mysql:${VERSION}
+        container_name: ${COMPOSE_PROJECT_NAME}-mysql
+        environment: 
+            - MYSQL_ROOT_PASSWORD
+        volumes:
+            - ${BASE_PATH}/${COMPOSE_PROJECT_NAME}/db/data:/var/lib/mysql
+            - ${BASE_PATH}/${COMPOSE_PROJECT_NAME}/db/dbseed:/docker-entrypoint-initdb.d
+        networks:
+            backend:
+                aliases:
+                    - mysql
+
+networks:
+    backend:
