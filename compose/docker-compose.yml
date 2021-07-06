@@ -2,7 +2,7 @@ version: '3'
 services:
     tomcat:
         restart: always
-        image: kohlmayer/tomcat-dis-gecco:${VERSION}
+        image: dr.bitcare.de/tomcat-dis-gecco:${VERSION}
         container_name: ${COMPOSE_PROJECT_NAME}-tomcat
         env_file: 
             - .env
@@ -21,7 +21,7 @@ services:
 
     mysql:
         restart: always
-        image: kohlmayer/mysql:${VERSION}
+        image:  dr.bitcare.de/mysql:${VERSION}
         container_name: ${COMPOSE_PROJECT_NAME}-mysql
         environment: 
             - MYSQL_ROOT_PASSWORD
