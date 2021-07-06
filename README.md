@@ -1,3 +1,3 @@
-# Docker-compose project for the NUM-FoDaPl Gecco installation of DIS
-For the local data collection in the NUM FoDaPl project an EDC system will be needed. The EDC system can be integrated with the local data integration centers and provides the capability to enter data manually, which can not be imported automatically. 
+# Docker-compose project for the NUM-CODEX Gecco installation of DIS
+For the local data collection in the NUM-CODEX project an EDC system will be needed. The EDC system can be integrated with the local data integration centers and provides the capability to enter data manually, which can not be imported automatically. 
 This repository contains the docker-compose files neede to get a DIS installation up and running.
