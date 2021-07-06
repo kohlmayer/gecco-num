@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.23, for Win64 (x86_64)
 --
 -- Host: localhost    Database: m4_psns
 -- ------------------------------------------------------
--- Server version	8.0.18
+-- Server version	8.0.23
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,9 +23,9 @@ DROP TABLE IF EXISTS `a_a_b`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_b` (
-  `id` int(11) unsigned NOT NULL,
-  `REV` int(11) NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `id` int unsigned NOT NULL,
+  `REV` int NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   `h` bit(1) DEFAULT NULL,
   `g` bit(1) DEFAULT NULL,
   `a` bit(1) DEFAULT NULL,
@@ -57,9 +57,9 @@ DROP TABLE IF EXISTS `a_a_d`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_d` (
-  `id` int(11) unsigned NOT NULL,
-  `REV` int(11) NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `id` int unsigned NOT NULL,
+  `REV` int NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`,`REV`),
@@ -86,10 +86,10 @@ DROP TABLE IF EXISTS `a_a_d_b`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_d_b` (
-  `REV` int(11) NOT NULL,
-  `b_id` int(11) unsigned NOT NULL,
-  `d_id` int(11) unsigned NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `REV` int NOT NULL,
+  `b_id` int unsigned NOT NULL,
+  `d_id` int unsigned NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   PRIMARY KEY (`REV`,`b_id`,`d_id`),
   CONSTRAINT `FKbevvg4frhffiftuctnebjcy7l` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -113,9 +113,9 @@ DROP TABLE IF EXISTS `a_a_e`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_e` (
-  `id` int(11) unsigned NOT NULL,
-  `REV` int(11) NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `id` int unsigned NOT NULL,
+  `REV` int NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `c` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -131,7 +131,7 @@ CREATE TABLE `a_a_e` (
 
 LOCK TABLES `a_a_e` WRITE;
 /*!40000 ALTER TABLE `a_a_e` DISABLE KEYS */;
-INSERT INTO `a_a_e` VALUES (1,84,0,'ESmCcP2ZvDcozOSM47BC5wzBVDWbpBcu+zC7pXglX5s=','I5dPid4Zf6GM+OowhDm3Q1IyDFneDk9Kmqm3V61RWsI=','JAF4+u6ds5bwIC00JjlT2lEH9UdIXG4tzwksC2Sh8wM='),(1,86,1,'AmVj9+LkG6eXMqvNkcv/zI81UVRDQODEe5WdC4sy5tY=','w0/ppwdlrNHwyTOeTPTEjP0Q+IBftiPACGTOTuTsLz8=','eBpW6sr8snuLEhOaZrBIw5Oz54XTBjJjQYx9KSjbvOo='),(2,88,0,'Kmv7G2BNtjd64H1FdYTW4C4FOhM6vxei79CqZvsfrh0=','3PfRmD4D1j8FshCXLjNQ1gbrsbkPifFuKCfanm/Raqo=','CoqKV5ux+AHGeR8R9u4uPP/2BptCm4q6Qg46Au6DRsM='),(2,89,1,'I3nZvj7MOdJ7yFJ4UKXadPQlUyAODlS4KO9ITM8KoLU=','hg7rIT1S1Ta3udqntkdncVlv/oK7OSHX3urHROZIlwE=','7ZQ6pnWG0PyDx7b4nI860xeBJBYeVU4j4kl8guGN8W4=');
+INSERT INTO `a_a_e` VALUES (1,85,0,'u3hn0fpRrTI+q5tUaI2GLdJ84VfGepHjOurKMtIOBKI=','8fmBzWPlXR2aDNhyfg5vRZTpK7f+4SUFqMLisFH0QnQ=','AdWn0WwLB4nmdHqF27L/aMuy2KoX33tWSFSeDLootTA='),(1,87,1,'kGczIwjGmeSboUPuuy93KnO5BhcAuOVMSIB9za3QqLI=','6Ob6omkm5oaeWSkUjXvtiln6bjC7EWnUYCTRVPNoX3I=','UBf0xlYcoXyCNaqyxZaLcESayv6KSQ2z1hHYI1PiN2M='),(2,89,0,'NcilXwXvsC8FhY4fJ4vINhosGtF2GKEwFkoEdSa1Rf0=','F3Zaz4jtHny6VFcJpmfbzM1wCJBWCGe997aR9Nq0Yfw=','RqJe/kwG5zkETzytfwAthrHgjof+eZBGc+6rzYydi8M='),(2,90,1,'WP1vRaw9ZbC3h2lrtSxOxsa1LpQjPCVD/FEnmIMMSxE=','t3W27j7X6Cir2mfcAOM5FGlaZafsXNxZFF1xyrzENYY=','XBS2bdM81Z0espSL1Yk+bnnj8ps471kdETVbc3CVHFo=');
 /*!40000 ALTER TABLE `a_a_e` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,14 +143,15 @@ DROP TABLE IF EXISTS `a_a_f`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_f` (
-  `id` int(11) unsigned NOT NULL,
-  `REV` int(11) NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `id` int unsigned NOT NULL,
+  `REV` int NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   `c` bit(1) DEFAULT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `showPatientNames` bit(1) DEFAULT NULL,
   `usesKISIDs` bit(1) DEFAULT NULL,
+  `usesKITIDsOnly` bit(1) DEFAULT NULL,
   PRIMARY KEY (`id`,`REV`),
   KEY `FKbyagumjsuii3dvg21toedy7ty` (`REV`),
   CONSTRAINT `FKbyagumjsuii3dvg21toedy7ty` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
@@ -163,7 +164,7 @@ CREATE TABLE `a_a_f` (
 
 LOCK TABLES `a_a_f` WRITE;
 /*!40000 ALTER TABLE `a_a_f` DISABLE KEYS */;
-INSERT INTO `a_a_f` VALUES (1,85,0,_binary '','+tZBqOOQQrm+BGT4lbqOFlR2eBaxmo6U/nl+ZZzVmPs=','2dzEfjbIijTUYLwKM8X+IAbGWigieAdRSWs9oueOGtw=',_binary '',_binary ''),(1,86,1,_binary '','9Xv2JIfsCYf7afonU6BC9WYOVinNEr+c839ldGB/9I0=','76hb4tLc/L+9ORErDjPMVCoj0NGdJR9yLoi+8xjOeOA=',_binary '',_binary ''),(1,87,1,_binary '','qriKusJS3pzOP8C+7QDGlCltDl5n8K3It3/Wz++T/2E=','ClZI0ZcZg7H9DGrPnJxlBo47HfE0MKsEKWBsz0ZIj3Q=',_binary '',_binary ''),(1,89,1,_binary '','YPynMxQ7bhhKZMOlSo1E2c/pJBGsJazZm0NPsCJS4NY=','sVbeDxL2iDRv0jDawBGMPvstbsn5AH5dSSo2V2BqzjI=',_binary '',_binary ''),(1,90,1,_binary '','iWoavK2SUFaz0UyttD6tLW5bjbjGeuZR/XgXjScuDGs=','d4GXNy+v/QgD6JA/nuGKXyCzejeo+HMontoVp1sL0ug=',_binary '',_binary ''),(1,91,1,_binary '','K9EIoOrMv/pxNbNVeV8UfFD8L0I9TAyHH4VZ3dxW52E=','MacKOLY8TzUuqSdDXXsPpi1QK0C1v30ougFzRrRuZMk=',_binary '',_binary ''),(1,92,1,_binary '','BEJAmW1TwdI/tUmDY7juP04HHzX7DQB3hBNUTXKIhkA=','zdqhBirtgGT38TV3BDbEfVxonWuyhwIn05vG4HW+dc8=',_binary '',_binary ''),(1,93,1,_binary '','skQ8qefdladKIl0K+QnTPB6vGDx2G2rLeXb4QPz8OqM=','dPemC3VgMYBSAbochaA4fYMcalBz5Ie2AcW46NO+6TA=',_binary '',_binary ''),(1,94,1,_binary '','G8IV64DhHqiwof5LCQBpeVEp4R0Bu5oWz0/3zFSxP5c=','eVx8OixoijIaM1+/yN3b8yIXLUvZ7H5E3Z4P+FVoahQ=',_binary '',_binary '');
+INSERT INTO `a_a_f` VALUES (1,86,0,_binary '','vZ+sapLu8PJDvh0BNDzUcAHdiofrwNBcf2II/LTYK/0=','gLvt302TyzRHKowv8/Yp+omEIo/LrSvGwzhUFqloDRk=',_binary '',_binary '',_binary '\0'),(1,87,1,_binary '','dmluIsBis8vfB4XO1FJyBvnczAwCyRd2mu1NSv+fWd0=','hnOclhFV7IiVwaUB+9mPt7YWjjKrzeOrIwpf54Wzvc4=',_binary '',_binary '',_binary '\0'),(1,88,1,_binary '','ohy/bO2MPLIm0B9Hhlx59yI80KiGtJWhkHeRNI5p/gM=','DWaHXnOeW7UqWEqlhMrUr2yWAiZwHOwumqKW1TP1Ntg=',_binary '',_binary '',_binary '\0'),(1,90,1,_binary '','sJ0vw5udkwEg4dO5xpVLNSWqRNz7RIbIReqLGg0Jjp8=','5UPLAOU/6aKgixMoNJnlWK6UjJsxwcLJItsivZCKSPs=',_binary '',_binary '',_binary '\0'),(1,91,1,_binary '','SrVlTpjzPwg/+JfBADuedtZ9byZsMBh8/5pj5XqMVjU=','88uI8Q6fIzdBQ9c4QRwSgAjNRGvkGNuc/Csl4wefpWM=',_binary '',_binary '',_binary '\0'),(1,92,1,_binary '','2uItzYXL8I2XuBOpBRrn1eSM9UZ48Dlm/kyaO75ZsTU=','Kwslg3yu0RPHc4cV8plKyIew2mWVQwa7by4RUiSDyi4=',_binary '',_binary '',_binary '\0'),(1,93,1,_binary '','+Su8jlD424UNNqNRKzW6j8/eRW1mKVUvNHDY9sSgrMI=','RS8TSCN6/lOtsW5jk/Yj3d02imWOLIUMVsMvBZqNts0=',_binary '',_binary '',_binary '\0'),(1,94,1,_binary '','lbjgkkP6Mp/+ugp+jN0dmhqcxyHjGpN9I8VgjX6kN/U=','NsjEbKerovIOGtsWBgfGOb9cuYlTNptUXV0yFGvQ8NI=',_binary '',_binary '',_binary '\0'),(1,95,1,_binary '','QsmBk1Mgi1SZIWT4nVOf9aWQ9k/H6jDa+VuCkawAVI0=','BcmRcjH/R91ArE8Pjn9+KId2ahl7528RzjQ7wIbzfPY=',_binary '',_binary '',_binary '\0');
 /*!40000 ALTER TABLE `a_a_f` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -175,10 +176,10 @@ DROP TABLE IF EXISTS `a_a_f_e`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_f_e` (
-  `REV` int(11) NOT NULL,
-  `f_id` int(11) unsigned NOT NULL,
-  `e_id` int(11) unsigned NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `REV` int NOT NULL,
+  `f_id` int unsigned NOT NULL,
+  `e_id` int unsigned NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   PRIMARY KEY (`REV`,`f_id`,`e_id`),
   CONSTRAINT `FKliue6w1bnwx9l8ovj190mvbi0` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -190,7 +191,7 @@ CREATE TABLE `a_a_f_e` (
 
 LOCK TABLES `a_a_f_e` WRITE;
 /*!40000 ALTER TABLE `a_a_f_e` DISABLE KEYS */;
-INSERT INTO `a_a_f_e` VALUES (86,1,1,0),(89,1,2,0);
+INSERT INTO `a_a_f_e` VALUES (87,1,1,0),(90,1,2,0);
 /*!40000 ALTER TABLE `a_a_f_e` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -202,9 +203,9 @@ DROP TABLE IF EXISTS `a_a_g`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_g` (
-  `id` int(11) unsigned NOT NULL,
-  `REV` int(11) NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `id` int unsigned NOT NULL,
+  `REV` int NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   `allowedFormnames` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `g` longtext COLLATE utf8mb4_unicode_ci,
   `e` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -215,10 +216,10 @@ CREATE TABLE `a_a_g` (
   `otpKey` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `p` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `h` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `d` bigint(20) DEFAULT NULL,
+  `d` bigint DEFAULT NULL,
   `useOTP` bit(1) DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `a_e_id` int(11) unsigned DEFAULT NULL,
+  `a_e_id` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`,`REV`),
   KEY `FK7imklkomn2yorye59puy12hem` (`REV`),
   CONSTRAINT `FK7imklkomn2yorye59puy12hem` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
@@ -231,7 +232,7 @@ CREATE TABLE `a_a_g` (
 
 LOCK TABLES `a_a_g` WRITE;
 /*!40000 ALTER TABLE `a_a_g` DISABLE KEYS */;
-INSERT INTO `a_a_g` VALUES (1,87,0,NULL,'03AxVBkaLTW0Vjyyv06Tf/qPqen/ydCw8zgEXAcuXBjoDr+dC1te2HRs3UaUJl+zjDTfyuYlPs6ESbe8ypFeTfZtwH/oAA///0oV6Yp3m2LwfcB8sefG+UJPxtH8qltam3ZVAYm0IX4jAOCg+/TDkyuJwl5JoVRvzKvGVnhP3Il4zJlLE2inimX0+QTQTVQn7ZojOM9E6IkFcXEmRmIwm7I0o4lBQIK2VkEjA55TVLt5JvDpJRNnysE4q3NfV4UdAvStDCBlQUBnv3it7ovc9w==','Benutzer','kohlmayer@bitcare.de','STA2Z8tNs7EJ/USAgpPyRYTwerKSuVo4b2UjFOElEPzPzrDrkrjUeFIGhh6okIGm',_binary '\0','2020-10-19 11:19:51','','0171-4659089','SUPERADMIN',1,_binary '\0','admin',1),(2,90,0,NULL,'Kgn65s2agKiWMXBnH+zj6zqT8LtqYLwZCMNbfI8QH1frqPEEWnjE7YkkLPBSi78fneca1wVgjwZEDF+qu2H+oEVTeClqVW+rpC6U2rarYW/DlGGg1cRHnO58CQreZNIM8oFtlp37lZ2oaB0ghhP0zmMrCK0ZiuIa8blEMCyXta7LA8U9T8dKDDdyfOUNqU/VRIKKzl8ycTWs1s1WnpKB/VGuG0mVtLTywojvuhcSHwDblKJxjkDDsvRxdNSyfdRP/SFbl7hquqoEmV4ha9rVjQ==','service_User SITE','info@bitcare.de','zsMKPgiidqZJkG2vWp2Xmk86wZbSBmStvNENt1BWClQWxninENNw3wbQKBRf7NgM',_binary '\0','2020-10-19 11:19:51','','+49 89 9430 1309','ADMINISTRATOR',2,_binary '\0','service_SITE',2),(3,91,0,NULL,'13fpHo7Kc5UNkSNmPFpi8c7mIqyzaSrtJNzk4OByU5w7i5f6KxscJzKpm13B77OKXnSVGvuWGky3dRCuTJh8rMAufjK+5DKFxTJW6Mb6j2lRqFs5EBLIuElUOmRjSTFkq7IY2aNX2u0AH/fClfHNNQVOu5IgMExYfIKHq2U8JogojSU4SLeKVLjII0wBteJqJSbtcavqkbTPJGbU/fFTDTjGu5tHWAThg5DwM9SmocWQLfHs9C4TJLhzIa80Z04wwQdvEvHSsUnz44OfspnrmQ==','service_User Test','info@bitcare.de','nJ8GknxkzGsxrcf/VlUwOMhI5gVyrqqc5/Bx1sXMb0xoGSKX8iOGwHViQyooGkMy',_binary '\0','2020-10-19 11:19:51','','+49 89 9430 1309','ADMINISTRATOR',2,_binary '\0','service_Test',1),(4,92,0,NULL,'I+Wf+7xPgQdhF0cWHS1Qd8KoTFOre+jh/VJs4vCI1qUGdtWCPO6tU2BEWL3uiNV8jWz0T37RDukaRQeCPWbuiCal5L6wELWl7c9zm6CIl/a1nhfK9UFB5MDl7o00exBcMGGwHZmtMJ8abAYPKe/RMcPrP0zeROZco+0n0n/c06CqIKQr/0E8oyw2u4Ayv1LjinL/xFPxTjXbWDkJT3gZ8DJfZFA6g4aQZtc96CZiMduCyR1E7zF5SULDV6Mky/9/xpJ8NIqmbz2SAeXgHUoWdw==','Benutzer',NULL,'nUuOASdaJeNlLNF+lFQZ03atOXxuNYklwz/bmhsBZr/PpDhZ99jKYyRVwHDCxeXY',_binary '\0','2020-10-19 11:19:52','',NULL,'ADMINISTRATOR',1,_binary '\0','admin_SITE',2),(5,93,0,NULL,'D9i3XCG3wq2MMiqq6/wVcXLbdCxwBqGRHGI3A/PlsHlbA3LrmC0NflCjkPeVt8M/uVC8IXzyMl0P5IgRM/G7MuF6xH3n/+JcOatjc3FxBtt9QhBrfcgUF6F64CoPqKTrRAJce7GAV8VCT7HyQijcx1A+xHAjVlGTqPZBnm317Thkph/2C3vfxDbuMOaOvtm2i2rYClbyGDbFuKCA/BfXI1F6rcPzJjFh+EK9AIIoYxSnX89WnyLpd30zdWqbScwwEC1OGcGDtR/22N15gdRGXQ==','Benutzer',NULL,'CXBqjbXAPYe/vJIwWDm9o41HNr3IC0TauElXFQT8fbKjKxQ2tUFboHAly2TXODHU',_binary '\0','2020-10-19 11:19:52','',NULL,'ADMINISTRATOR',1,_binary '\0','admin_Test',1),(6,94,0,NULL,'hnlM56RrXP/Nkvhygf9V4j2Nre9OdKNy+rXISmN4jOxi1N05m+2oMwQH6cfHlB+j2dqsLRvB3b0f8tyo4aSAChpjbBtC/t4hUFOEfmKR12AgTZocTbN+XjjRzZANyw/NjtF1K1PNT6VQ/1H8VKA01PZZ6uhinDDyxss6Lsh56LCG//LK+jbe3ncTzCJvwrQMAJX+PjLeFchWUKhPzCgejAVtJeFb8A9C/OxeI2e/MpqzYWa3w7PBcX1ZtYJmqyP/WHj2s6I8GmIsL0GAr7OSdQ==','Benutzer',NULL,'1mQliVRuMg2WiCCAJ4vf96yMWoXBdr4sNoZlLmYDkbn+FTscpACYp219nMH8ZBAF',_binary '\0','2020-10-19 11:19:52','',NULL,'ADMINISTRATOR',1,_binary '\0','gecco',1);
+INSERT INTO `a_a_g` VALUES (1,88,0,NULL,'mpyC2o82I7e7H4CGFALaNnp6hbisFyajf3knitTphCIwezOpKrjfTmj44kMyXcXwZg/ND6aXOrBR1SJeDwO29jwvrBcHJAbTn11XPt1R/enrDnPwd7p4zjmwbzBSwUoesYOocDWHXYk3QGCllGjrklbzskpeDVtaZNQurtLf9AgxbMedfKNjEvoWtvQqr+ku0VuajxnM2yL5H1Z1lDEF4XplVF4Mf4zVH7ukf6zPtimiFlM3MBhqkb2+341W1anE5uk4HK8HrDBl7GBDHwQs5w==','Benutzer','kohlmayer@bitcare.de','S1wGjuTufIF1kTb33uK7PtGRCuETQLrHn9gnwAZDMAA0SmqvRGXY9lhRjSsVmAvY',_binary '\0','2021-07-06 15:39:05','','0171-4659089','SUPERADMIN',1,_binary '\0','admin',1),(2,91,0,NULL,'t+gFWjWvoQGexoZE8xxGEKds1rddR6sPiseRQuo28hzu1iNdy21r4j0/LXD8oWcDm71ITzVnyMHivB3SzMzo+RsBkxqJ/g/2hzNAHbEhF/xT7stvQsgparoozXq2kaXupg7ToxqOi2Ydg4WCB3eRqun4wH7eBl/5LPrCJ4EFonRFf3yCiSndHbKYHT89bNo75GW1QD4F8OKAhCi8X1hduUlodL4b+nQUcHHVeNwAyFWWMv/7aaqQmvzWfnCVul1ggF8CHwpprJz18WNAouEuTw==','Benutzer',NULL,'VD10xsm7lVxqp31ot9a1tqe0WAuzwjmcJbxPrV3vzzECbcKIvMfBOojKGRUFo/On',_binary '\0','2021-07-06 15:39:05','',NULL,'ADMINISTRATOR',1,_binary '\0','admin_SITE',2),(3,92,0,NULL,'F3J108FtTx7iimOUXqVTMK8mLVFbEGi49/R5RJUBsucb22FsjM7P6qgMyRVk1mHIwjXX1cZUOt0RTFugz5EkHQk8o9L3qEcPjEkloTAZXnBKU/8XsGU4allYbKacoeRugqUgYrkJhZXsxljyzGUoYEwILa7ZBtooVOC5tlCgYK8n8lnjI5B1zU+pz9ki/+KFSb8su+RDJz5nHQGBEk57uXgLQL0h5pv54GfiybgVVE6DEhUE4XIA1vOezgE4k3oASFGHKLfPcA0yvkSu3UUYcw==','Benutzer',NULL,'uaRbOsBm15KeHxc/wgBGRYz7XswUymDLLkQSIY9uWSuzOIworqvYy5U3eZ36Bll/',_binary '\0','2021-07-06 15:39:05','',NULL,'ADMINISTRATOR',1,_binary '\0','admin_Test',1),(4,93,0,NULL,'vwg6S7Q/WSDfJOATgswteB5SBl3nf0l3YPGZ6uiGfULMuZfoi5oL/b5gEb6ga5rEAokRKTdQCgHzdvvuOH5abrQajNWTeF6LkeOP9ibIf88v3J/jbgEvc4Y+HGevhx0WphYYhuJ5hJWlEbjhB9zFb5wBiClAS4O9i32ZPNlqgIKO3qxMQTLQban2/6deDCh4GD3Re7G/+jxkH+Uoz4ibazllqmTP2xPRKE+geeIy70FqqxXzqYYyqK56w9H4CXL4WdFzNH4jtDr9iXyuV318Dw==','Benutzer',NULL,'74AY8AsNXQAR1VV6Akjm1GHlm5lI8rNBQJnvWDGZ4L+mrSPhNxuImdUQnUZxRRMJ',_binary '\0','2021-07-06 15:39:05','',NULL,'ADMINISTRATOR',1,_binary '\0','gecco',1),(5,94,0,NULL,'j9544fJ1NZV2f9MEgmUnJv9jOJzgW8kWK8IGfnBOUNacGVMOO8fI7zfv+uXRkb3qNlXOPGYI3t7Zahm2xTm6Rhf+9nQEc8k+QpqjZcjXbJJm5yP5ybDa8cr2YUPTaE+FGyAnUdF+Kkc4T2iyJm83arkXDCuPFffwqh+JbKrcrewKeAvZaOIFAHbRg1x4rSEwAu//72Y4SmMY73hu7hxIP8lI4wWAtIpszz2ZggYWpdAU7Q7NrHPpif55rsYO77/gqUPLeVl7iClJsfMBDqf/BQ==','service_User SITE','info@bitcare.de','mVfmJi1lxn4wuZbBt0L/TZXmq67sdWxeWKhpWNltkcs0JQcyiIZfLIiyH8wZQeKR',_binary '\0','2021-07-06 15:39:05','','+49 89 9430 1309','ADMINISTRATOR',2,_binary '\0','service_SITE',2),(6,95,0,NULL,'Qdsi0y9MGBqvchRVq15/QWkYJTrHL/q2o96vDplDWl5kzEUotDapzhEB34jhYGTb9rpXnsYA7B3jbKSYELebf062GA2M08VqJv4hZb6yyFrqPZF79MEE2B/dSyAWEoTbUrrV4VOM9jUtLyrRKbLNwKGTgsTx4ISjk0Kb9fAvIlUJc0ln8gUi8sFJdXROZQ0IwHU4l2cfCgsZoGT5+gDyQ9SJuPc7RXlbKGZvXubp4juEI57yZZMd+8Ol73lOmHBDgr8SEUwZSC/EsGfLjPm33g==','service_User Test','info@bitcare.de','uRREutJ6UYTjeA4hPKn6B9Ivds3C+PLmbDZD3M44x7J90MJm8XrSbygLdHKg8JDB',_binary '\0','2021-07-06 15:39:05','','+49 89 9430 1309','ADMINISTRATOR',2,_binary '\0','service_Test',1);
 /*!40000 ALTER TABLE `a_a_g` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -243,10 +244,10 @@ DROP TABLE IF EXISTS `a_a_g_f`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_g_f` (
-  `REV` int(11) NOT NULL,
-  `g_id` int(11) unsigned NOT NULL,
-  `f_id` int(11) unsigned NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `REV` int NOT NULL,
+  `g_id` int unsigned NOT NULL,
+  `f_id` int unsigned NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   PRIMARY KEY (`REV`,`g_id`,`f_id`),
   CONSTRAINT `FKfntbqlvjwo9cjm0allvkrtkwa` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -258,7 +259,7 @@ CREATE TABLE `a_a_g_f` (
 
 LOCK TABLES `a_a_g_f` WRITE;
 /*!40000 ALTER TABLE `a_a_g_f` DISABLE KEYS */;
-INSERT INTO `a_a_g_f` VALUES (87,1,1,0),(90,2,1,0),(91,3,1,0),(92,4,1,0),(93,5,1,0),(94,6,1,0);
+INSERT INTO `a_a_g_f` VALUES (88,1,1,0),(91,2,1,0),(92,3,1,0),(93,4,1,0),(94,5,1,0),(95,6,1,0);
 /*!40000 ALTER TABLE `a_a_g_f` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -270,10 +271,10 @@ DROP TABLE IF EXISTS `a_a_g_k`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_g_k` (
-  `REV` int(11) NOT NULL,
-  `g_id` int(11) unsigned NOT NULL,
-  `k_id` int(11) unsigned NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `REV` int NOT NULL,
+  `g_id` int unsigned NOT NULL,
+  `k_id` int unsigned NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   PRIMARY KEY (`REV`,`g_id`,`k_id`),
   CONSTRAINT `FKbm4txuev5crr9jt9njm8di1fs` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -285,7 +286,7 @@ CREATE TABLE `a_a_g_k` (
 
 LOCK TABLES `a_a_g_k` WRITE;
 /*!40000 ALTER TABLE `a_a_g_k` DISABLE KEYS */;
-INSERT INTO `a_a_g_k` VALUES (87,1,1,0),(87,1,2,0),(87,1,3,0),(87,1,4,0),(87,1,5,0),(87,1,6,0),(87,1,7,0),(87,1,8,0),(87,1,9,0),(87,1,10,0),(87,1,11,0),(87,1,12,0),(87,1,13,0),(87,1,14,0),(87,1,15,0),(87,1,16,0),(87,1,17,0),(87,1,18,0),(87,1,19,0),(87,1,20,0),(87,1,21,0),(87,1,22,0),(87,1,23,0),(92,4,1,0),(92,4,2,0),(92,4,5,0),(92,4,6,0),(92,4,7,0),(92,4,8,0),(92,4,10,0),(92,4,15,0),(92,4,16,0),(92,4,19,0),(93,5,1,0),(93,5,2,0),(93,5,5,0),(93,5,6,0),(93,5,7,0),(93,5,8,0),(93,5,10,0),(93,5,15,0),(93,5,16,0),(93,5,19,0),(94,6,1,0),(94,6,2,0),(94,6,3,0),(94,6,5,0),(94,6,6,0),(94,6,7,0),(94,6,8,0),(94,6,10,0),(94,6,16,0),(94,6,19,0);
+INSERT INTO `a_a_g_k` VALUES (88,1,1,0),(88,1,2,0),(88,1,3,0),(88,1,4,0),(88,1,5,0),(88,1,6,0),(88,1,7,0),(88,1,8,0),(88,1,9,0),(88,1,10,0),(88,1,11,0),(88,1,12,0),(88,1,13,0),(88,1,14,0),(88,1,15,0),(88,1,16,0),(88,1,17,0),(88,1,18,0),(88,1,19,0),(88,1,20,0),(88,1,21,0),(88,1,22,0),(88,1,23,0),(88,1,24,0),(91,2,1,0),(91,2,2,0),(91,2,5,0),(91,2,6,0),(91,2,7,0),(91,2,8,0),(91,2,10,0),(91,2,15,0),(91,2,16,0),(91,2,19,0),(92,3,1,0),(92,3,2,0),(92,3,5,0),(92,3,6,0),(92,3,7,0),(92,3,8,0),(92,3,10,0),(92,3,15,0),(92,3,16,0),(92,3,19,0),(93,4,1,0),(93,4,2,0),(93,4,3,0),(93,4,5,0),(93,4,6,0),(93,4,7,0),(93,4,8,0),(93,4,10,0),(93,4,16,0),(93,4,19,0);
 /*!40000 ALTER TABLE `a_a_g_k` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -297,10 +298,10 @@ DROP TABLE IF EXISTS `a_a_g_k2`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_g_k2` (
-  `REV` int(11) NOT NULL,
-  `g_id` int(11) unsigned NOT NULL,
-  `k_id` int(11) unsigned NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `REV` int NOT NULL,
+  `g_id` int unsigned NOT NULL,
+  `k_id` int unsigned NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   PRIMARY KEY (`REV`,`g_id`,`k_id`),
   CONSTRAINT `FK938c27p1trcwiaiu3cpw07osm` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -312,7 +313,7 @@ CREATE TABLE `a_a_g_k2` (
 
 LOCK TABLES `a_a_g_k2` WRITE;
 /*!40000 ALTER TABLE `a_a_g_k2` DISABLE KEYS */;
-INSERT INTO `a_a_g_k2` VALUES (87,1,1,0),(87,1,2,0),(87,1,3,0),(87,1,4,0),(87,1,5,0),(87,1,6,0),(87,1,7,0),(87,1,8,0),(87,1,9,0),(87,1,10,0),(87,1,11,0),(87,1,12,0),(87,1,13,0),(87,1,14,0),(87,1,15,0),(87,1,16,0),(87,1,17,0),(87,1,18,0),(87,1,19,0),(87,1,20,0),(87,1,21,0),(87,1,22,0),(87,1,23,0),(92,4,1,0),(92,4,2,0),(92,4,3,0),(92,4,5,0),(92,4,6,0),(92,4,7,0),(92,4,8,0),(92,4,10,0),(92,4,15,0),(92,4,16,0),(92,4,19,0),(93,5,1,0),(93,5,2,0),(93,5,3,0),(93,5,5,0),(93,5,6,0),(93,5,7,0),(93,5,8,0),(93,5,10,0),(93,5,15,0),(93,5,16,0),(93,5,19,0),(94,6,1,0),(94,6,2,0),(94,6,3,0),(94,6,5,0),(94,6,6,0),(94,6,7,0),(94,6,8,0),(94,6,10,0),(94,6,16,0),(94,6,19,0);
+INSERT INTO `a_a_g_k2` VALUES (88,1,1,0),(88,1,2,0),(88,1,3,0),(88,1,4,0),(88,1,5,0),(88,1,6,0),(88,1,7,0),(88,1,8,0),(88,1,9,0),(88,1,10,0),(88,1,11,0),(88,1,12,0),(88,1,13,0),(88,1,14,0),(88,1,15,0),(88,1,16,0),(88,1,17,0),(88,1,18,0),(88,1,19,0),(88,1,20,0),(88,1,21,0),(88,1,22,0),(88,1,23,0),(88,1,24,0),(91,2,1,0),(91,2,2,0),(91,2,3,0),(91,2,5,0),(91,2,6,0),(91,2,7,0),(91,2,8,0),(91,2,10,0),(91,2,15,0),(91,2,16,0),(91,2,19,0),(92,3,1,0),(92,3,2,0),(92,3,3,0),(92,3,5,0),(92,3,6,0),(92,3,7,0),(92,3,8,0),(92,3,10,0),(92,3,15,0),(92,3,16,0),(92,3,19,0),(93,4,1,0),(93,4,2,0),(93,4,3,0),(93,4,5,0),(93,4,6,0),(93,4,7,0),(93,4,8,0),(93,4,10,0),(93,4,16,0),(93,4,19,0);
 /*!40000 ALTER TABLE `a_a_g_k2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -324,13 +325,13 @@ DROP TABLE IF EXISTS `a_a_h`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_h` (
-  `id` int(11) unsigned NOT NULL,
-  `REV` int(11) NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `id` int unsigned NOT NULL,
+  `REV` int NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   `c` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `b` int(11) DEFAULT NULL,
+  `b` int DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `a_g_id` int(11) unsigned DEFAULT NULL,
+  `a_g_id` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`,`REV`),
   KEY `FKgh5ct51jt6n132j98thjmulxh` (`REV`),
   CONSTRAINT `FKgh5ct51jt6n132j98thjmulxh` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
@@ -343,6 +344,7 @@ CREATE TABLE `a_a_h` (
 
 LOCK TABLES `a_a_h` WRITE;
 /*!40000 ALTER TABLE `a_a_h` DISABLE KEYS */;
+INSERT INTO `a_a_h` VALUES (1,88,0,'XtToreq68fmbLLvo17xWTwVYleE4TGrsV3d1v9xO//8=',0,'ishusername',1),(2,91,0,'5bBHY/jwYlmAn5XXWQsRwqQuXy5uhtnM6EQQS6FEWEI=',0,'ishusername',2),(3,92,0,'PKbDXMDdtGzEZ14vqIlgupl05ReAZdg8RN9sg4Iodjo=',0,'ishusername',3),(4,93,0,'M7PimxqX+wLgt4ibkQKOiReP/FQm001aYHdQfXNzd+E=',0,'ishusername',4),(5,94,0,'u1RrXQ4rZLCcFNVHeaKVWcyrb0CTbvANtQiqukytozU=',0,'ishusername',5),(6,95,0,'/QSmNXT1GwDAY9dFN5CHxN3jIEEQ82Xy6MLIZzkfBuE=',0,'ishusername',6);
 /*!40000 ALTER TABLE `a_a_h` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -354,12 +356,12 @@ DROP TABLE IF EXISTS `a_a_i`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_i` (
-  `id` int(11) unsigned NOT NULL,
-  `REV` int(11) NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
-  `a` int(11) DEFAULT NULL,
+  `id` int unsigned NOT NULL,
+  `REV` int NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
+  `a` int DEFAULT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `a_g_id` int(11) unsigned DEFAULT NULL,
+  `a_g_id` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`,`REV`),
   KEY `FKhemkly0pt91pdhbq0ymk5eaq1` (`REV`),
   CONSTRAINT `FKhemkly0pt91pdhbq0ymk5eaq1` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
@@ -383,12 +385,12 @@ DROP TABLE IF EXISTS `a_a_j`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_j` (
-  `id` int(11) unsigned NOT NULL,
-  `REV` int(11) NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `id` int unsigned NOT NULL,
+  `REV` int NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `a_e_id` int(11) unsigned DEFAULT NULL,
+  `a_e_id` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`,`REV`),
   KEY `FKaq3p2ug9tahrdjhsabyw1q2dl` (`REV`),
   CONSTRAINT `FKaq3p2ug9tahrdjhsabyw1q2dl` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
@@ -412,9 +414,9 @@ DROP TABLE IF EXISTS `a_a_k`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_k` (
-  `id` int(11) unsigned NOT NULL,
-  `REV` int(11) NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `id` int unsigned NOT NULL,
+  `REV` int NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`,`REV`),
   KEY `FKou9mtyokc5wr8ri4muhbqtgd6` (`REV`),
@@ -428,7 +430,7 @@ CREATE TABLE `a_a_k` (
 
 LOCK TABLES `a_a_k` WRITE;
 /*!40000 ALTER TABLE `a_a_k` DISABLE KEYS */;
-INSERT INTO `a_a_k` VALUES (1,61,0,'PATIENTLIST'),(2,62,0,'NEWPATIENT'),(3,63,0,'SCAN'),(4,64,0,'STORAGEMNGT'),(5,65,0,'BARCODES'),(6,66,0,'SAMPLELIST'),(7,67,0,'SEARCH'),(8,68,0,'EXPORT'),(9,69,0,'RESTRICTEDFORMS'),(10,70,0,'TIMERESTRICTEDFORMS'),(11,71,0,'FORMEDIT'),(12,72,0,'VISITEDIT'),(13,73,0,'TABLEVIEWMDAT'),(14,74,0,'EXPORTPATIENTNAMES'),(15,75,0,'PSEUDONYMOUSINPUT'),(16,76,0,'DELETEPATIENT'),(17,77,0,'STATISTICS'),(18,78,0,'CONTACTS'),(19,79,0,'SHOWPATIENTNAMES'),(20,80,0,'SINGLESHOTFORM'),(21,81,0,'TIMERESTRICTEDFORMSOVERRIDE'),(22,82,0,'SIGNFORMS'),(23,83,0,'LOCKFORMS');
+INSERT INTO `a_a_k` VALUES (1,61,0,'PATIENTLIST'),(2,62,0,'NEWPATIENT'),(3,63,0,'SCAN'),(4,64,0,'STORAGEMNGT'),(5,65,0,'BARCODES'),(6,66,0,'SAMPLELIST'),(7,67,0,'SEARCH'),(8,68,0,'EXPORT'),(9,69,0,'RESTRICTEDFORMS'),(10,70,0,'TIMERESTRICTEDFORMS'),(11,71,0,'FORMEDIT'),(12,72,0,'VISITEDIT'),(13,73,0,'TABLEVIEWMDAT'),(14,74,0,'EXPORTPATIENTNAMES'),(15,75,0,'PSEUDONYMOUSINPUT'),(16,76,0,'DELETEPATIENT'),(17,77,0,'STATISTICS'),(18,78,0,'CONTACTS'),(19,79,0,'SHOWPATIENTNAMES'),(20,80,0,'SINGLESHOTFORM'),(21,81,0,'TIMERESTRICTEDFORMSOVERRIDE'),(22,82,0,'SIGNFORMS'),(23,83,0,'LOCKFORMS'),(24,84,0,'IMPORT');
 /*!40000 ALTER TABLE `a_a_k` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -440,14 +442,16 @@ DROP TABLE IF EXISTS `a_a_m`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_a_m` (
-  `id` int(11) unsigned NOT NULL,
-  `REV` int(11) NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `id` int unsigned NOT NULL,
+  `REV` int NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   `doExport` bit(1) DEFAULT NULL,
   `doSearch` bit(1) DEFAULT NULL,
-  `a_e_id` int(11) unsigned DEFAULT NULL,
-  `a_f_id` int(11) unsigned DEFAULT NULL,
-  `a_g_id` int(11) unsigned DEFAULT NULL,
+  `modifyMdat` bit(1) DEFAULT NULL,
+  `modifyPdat` bit(1) DEFAULT NULL,
+  `a_e_id` int unsigned DEFAULT NULL,
+  `a_f_id` int unsigned DEFAULT NULL,
+  `a_g_id` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`,`REV`),
   KEY `FK7en71qoryolb302a4n2sh2tso` (`REV`),
   CONSTRAINT `FK7en71qoryolb302a4n2sh2tso` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
@@ -471,7 +475,7 @@ DROP TABLE IF EXISTS `a_b`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_b` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `h` bit(1) DEFAULT NULL,
@@ -492,7 +496,7 @@ CREATE TABLE `a_b` (
 
 LOCK TABLES `a_b` WRITE;
 /*!40000 ALTER TABLE `a_b` DISABLE KEYS */;
-INSERT INTO `a_b` VALUES (1,'6hfoCNSQDgu2XnXJpviNnarFH4/fOwzuaX67AedWjj4=','gQF+AQ0DSHxHTG3sG8OfaeBXBBwXzqmsAxgHdDW6CuA=',_binary '\0',_binary '\0',_binary '\0','READUSER-Roleadministration','components.core.auth.Role',_binary '',_binary '\0'),(2,'H/2NIKKrY34t5artWvnzOINDst2TL821aP9PjhJ3vfE=','ljJofFZW4lEw2S8n/mq2GxXtTYy/y7p6aOKbWcUN8QA=',_binary '\0',_binary '\0',_binary '\0','READUSER-Mdat-Pseudoservice','components.psns.DocumentPseudonyms',_binary '',_binary '\0'),(3,'hCWuifhZzTDL0MF6vPqRIQRc7Q6I8TESxX1iUaZAxoc=','qI2OnokyHVNseDxYdlRnUEPTw0hvlG2VYWRRbO3s8q8=',_binary '\0',_binary '\0',_binary '\0','READUSER-Ident-Pseudoservice','components.psns.IdentifierPseudonyms',_binary '',_binary '\0'),(4,'hbZ6F385x3u/9+tt9ms5d7eFzu5BtHnhtMIbbS2q0SM=','1pLXRyaKevC/Dq/GnDowvVISXqnLccFLHjGwzXYWbp4=',_binary '\0',_binary '\0',_binary '\0','READUSER-Login-Protokoll','components.core.loginlog.LoginlogEntry',_binary '',_binary '\0'),(5,'Xm6VzvsqEfAZyrvdrIqY7S+lxcFn5VV/txvrzpF4Ruo=','0kXDLK4FeYbFUPIHTB1Qvz/tVBlNA9gpG8THRftm8t8=',_binary '\0',_binary '\0',_binary '\0','READUSER-ParameterStorage','components.core.auth.Parameter',_binary '',_binary '\0'),(6,'q+LL2TT7tmzx/0UFm4CGHRZNN2BDBJGfnU91+TTuLFs=','7j4gR6TuiojZ1uD810HkuhCFnAdQZlFyHu2goUdEh4Q=',_binary '\0',_binary '\0',_binary '\0','READUSER-Idat-Pseudonymservice','components.psns.PatientPseudonyms',_binary '',_binary '\0'),(7,'nbavtl6XjmBY6B2Ed7myRPIuP3WjthkxO3jGdwU5uoU=','f1yaAYvBKzQnNcl1ChExM+pKROwO2j+Di0wp2xVDnBY=',_binary '\0',_binary '\0',_binary '\0','READUSER-Studienadmininistration','components.core.auth.Study',_binary '',_binary '\0'),(8,'gNUe2am8nlPIGKeLmCFKAGO5DrLeabGrjipNV3LoDsY=','x9WzuYCnpKAIi6yAnuNopIEJyLZTTGEoV/hMW7gYTy8=',_binary '\0',_binary '\0',_binary '\0','READUSER-Useradministration','components.core.auth.User',_binary '',_binary ''),(9,'5g//HOOSpbibA8cJGvPhr3rJTMkPluIJKQhmUqYdVck=','fA8hn0bZ+FC+z6oti3ZtzsXMBfbCFDj99xLzNlBDiQ0=',_binary '',_binary '',_binary '\0','READUSER-UserPreferenceadministration','components.core.auth.UserPreference',_binary '',_binary ''),(10,'QwdPzA92P0jhLFIsm+D8A6df728tr8tGCu+pf1jAwy0=','wnTCoOfFcU7peSThbpgkXcXS4soZrUGc/wtdBCmoeaw=',_binary '',_binary '',_binary '\0','READUSER-UserCredentialadministration','components.core.auth.UserCredential',_binary '',_binary ''),(11,'7GLqfS41FULrWRA3CyQJvCmjw4IIQ6jcluElg3lIz18=','lp5RGXUwwvii2Qsb1N6/oqVGuYfYNpP7gsHOIDcbkDY=',_binary '\0',_binary '\0',_binary '\0','READUSER-Permissionadministration','components.core.auth.Permission',_binary '',_binary '\0'),(12,'+86R9OQZCzdIo9629nSz1G5inDGRm2YHonCoEvsnHHQ=','seVYJWJzSibLOWELyVEVlWz8y1kWJDe74SOoKVMO8oI=',_binary '\0',_binary '\0',_binary '\0','READUSER-Institutionsadministration','components.core.auth.Site',_binary '',_binary '\0'),(13,'j5MfFFq2lcKB200wetQ2g+LvyuobVcu6gY8xF+fdjU4=','LbwrjxfM6qpX3rdhONXJiAsqXXAubccIKlQfZH3MXxQ=',_binary '\0',_binary '\0',_binary '\0','READUSER-Pdat-Pseudoservice','components.psns.LabPseudonyms',_binary '',_binary '\0'),(14,'pPnT7rhjgwN6ACAg0ne/RwNXMmUhQLe6EO1CY8BUPOg=','p+pwJHRuVbRTC9olDuVRYrRoYGX1kY1/M3p4UN5+C0c=',_binary '\0',_binary '\0',_binary '\0','READUSER-UserApprovaladministration','components.core.auth.UserApproval',_binary '',_binary '\0'),(15,'DnWLXI7BLH0M4LqNfdpKnorZ1pezqvKUCOVGjBPqM9Q=','hb0bTZGQ+PNPTPNMApl2yRSI2rdxAnJErMqVGDl6sQc=',_binary '',_binary '',_binary '\0','WRITEUSER-Roleadministration','components.core.auth.Role',_binary '',_binary ''),(16,'kWE8qX7Ye9t6ViLuod+wAqb3shwxGwkQh0V55WFDkVI=','7+F0I2l4CdINMHPSOGbVGKTTmgbO2tb9YsTtydZd4VU=',_binary '',_binary '',_binary '\0','WRITEUSER-Mdat-Pseudoservice','components.psns.DocumentPseudonyms',_binary '',_binary ''),(17,'DSHtrHuTAIw0+w765Hy23pFKNEncXR8MM0mOTHafMUE=','9xOEFXKJHi5giAYKmKaPtB+hfJ4Xv7YsSiDlNvctfeU=',_binary '',_binary '',_binary '\0','WRITEUSER-Ident-Pseudoservice','components.psns.IdentifierPseudonyms',_binary '',_binary ''),(18,'Y927Tzwzux5hPpwoIaTbXMBVhv1Wx7JZ+fejXw01U50=','jPXZRlLCBO7jbotfYAMJy69HtUOWIgAkyEUD14I3uy8=',_binary '',_binary '',_binary '\0','WRITEUSER-Login-Protokoll','components.core.loginlog.LoginlogEntry',_binary '',_binary ''),(19,'lYgHLQGJeGWpOlBS3SwnWMe+cSaMFZzEZoota1POxYE=','JudnG3dVm2+ytjkC4CtqfPSXtjNn4ui7w0LKXLqjm+E=',_binary '',_binary '',_binary '\0','WRITEUSER-ParameterStorage','components.core.auth.Parameter',_binary '',_binary ''),(20,'joktnG/58YviwscQDeg5lwKIcFj5Z9keiynj1b7z4rA=','3cSZbNVXZRh584uHn/R5RdjwaRKTDhI4cl4OkhqilE4=',_binary '',_binary '',_binary '\0','WRITEUSER-Idat-Pseudonymservice','components.psns.PatientPseudonyms',_binary '',_binary ''),(21,'PCi1QB0lDMmSUQI9i3EJD3mGrhPf8d9V4oIPpi070rs=','es7gWIYOmOMVSNRPWsdQ8bJD4lMWUzi6ADGeR+dBthA=',_binary '',_binary '',_binary '\0','WRITEUSER-Studienadmininistration','components.core.auth.Study',_binary '',_binary ''),(22,'jxvdrpOnromJwlWbepXmAu+P45J/0lkRnph2yyudeb4=','8L42+XDKoCNK+XHfM81sb2nJs7Mnbud/XLVXnmMIOsM=',_binary '',_binary '',_binary '\0','WRITEUSER-Useradministration','components.core.auth.User',_binary '',_binary ''),(23,'BctGe5xuZyrrbFUkBfta/+t0a2ep85L5Gd1IX9DwGic=','YDrVqdnZvDn8MbryKmX1vN4k4pQrHLG+pzBsPrqeKBQ=',_binary '',_binary '',_binary '\0','WRITEUSER-UserPreferenceadministration','components.core.auth.UserPreference',_binary '',_binary ''),(24,'seVaHFWHYzexOpTYYIuahy4pPLepJ/v6J6qgSdmE8gI=','NtZUTvYnGFf4q0OnK4B8Otf0pHbYSbeSi3cm+YEXm2I=',_binary '',_binary '',_binary '\0','WRITEUSER-UserCredentialadministration','components.core.auth.UserCredential',_binary '',_binary ''),(25,'HvkdtY9YyGBdXwG6YNQgYOW4py/tj+BN6dVoQoTkoPE=','/5ZI5OSw6yuSBWO5iVQZnDyu2zmrzeSSI5IxKu4KY/4=',_binary '',_binary '',_binary '\0','WRITEUSER-Permissionadministration','components.core.auth.Permission',_binary '',_binary ''),(26,'qP8RbTF33rlgKvEwcBvLsvGN4qOuNduLVtgUqGefrcI=','u+eECXfwsWdRCjefONtARkkn/VTS7UbCdj+YTKflWFw=',_binary '',_binary '',_binary '\0','WRITEUSER-Institutionsadministration','components.core.auth.Site',_binary '',_binary ''),(27,'qhzTFnwDyZxAHLUkOPL2cOvJiVavHBK9bKMCZ5FvXjs=','cDAk+ltEeggblle7VqKEAUV/LyfNHlLvpxD4ugPH9Ek=',_binary '',_binary '',_binary '\0','WRITEUSER-Pdat-Pseudoservice','components.psns.LabPseudonyms',_binary '',_binary ''),(28,'UMe6irI+ubPCKvfRSnZLHOfJcrr+Wgts9RZ9Wwir/08=','63W0H6NKDGTSyUhm/HCFK9etOySv3BF8IjGN8ko0HwY=',_binary '',_binary '',_binary '\0','WRITEUSER-UserApprovaladministration','components.core.auth.UserApproval',_binary '',_binary ''),(29,'+DfkYxCEq5uoVTXehtCK6slZPbb+ijVVrzFWF7rLOVM=','shFRtcMdz48CN/VjmD9XsR7jfkhw3lx5Wfzq28jYvbM=',_binary '',_binary '',_binary '','ADMINISTRATOR-Roleadministration','components.core.auth.Role',_binary '',_binary ''),(30,'BS0gJVZL82IjjC8zc6fHA+WLRIGS139dRq1pt9g7kak=','WE8KgWSqoV/4B5HMuQtGUIFIWQxrD+9MJ8iGpGcY2rE=',_binary '',_binary '',_binary '','ADMINISTRATOR-Mdat-Pseudoservice','components.psns.DocumentPseudonyms',_binary '',_binary ''),(31,'saZvrQQlNzcwfIYo24kriTfyKPgUM+Kj7Ke2wZj6ggk=','oYwfEtAVOBha5PnTygFL8UKlAMJpuvI0msxmjm69QZk=',_binary '',_binary '',_binary '','ADMINISTRATOR-Ident-Pseudoservice','components.psns.IdentifierPseudonyms',_binary '',_binary ''),(32,'A8yWpuTl2ADVHW9fGzgCzM9FMpQg6MwVN+eObwMRcho=','0+FCog95SWt5QrFMNMxXGV0ZP4l7LtsRqTbqjcI7Kxw=',_binary '',_binary '',_binary '','ADMINISTRATOR-Login-Protokoll','components.core.loginlog.LoginlogEntry',_binary '',_binary ''),(33,'8xOh250EmruHjysGqSYl3T62fOqGZEyFVrEC9YiMZSg=','7xtbfl9ESIxMjAO7UAyGFSfLpoLkYN3XpjG7v8Lg+74=',_binary '',_binary '',_binary '','ADMINISTRATOR-ParameterStorage','components.core.auth.Parameter',_binary '',_binary ''),(34,'tGvH3b0r6qW1YnCnZBArQtJOtl45cV+Mzo+kjeMuF7A=','emydDJTKAhwjxZ4BmTu5EFlvsW8N9lDkk5w1lKdFmMg=',_binary '',_binary '',_binary '','ADMINISTRATOR-Idat-Pseudonymservice','components.psns.PatientPseudonyms',_binary '',_binary ''),(35,'WxOjGZxa7Ndv7ykLOp0xOJYAhHiAyxHTtHOaTAbK1V4=','Cl1K8IAJRvOZVqi6CIEilQk1VU42mQYYYkvlZ8HJtA4=',_binary '',_binary '',_binary '','ADMINISTRATOR-Studienadmininistration','components.core.auth.Study',_binary '',_binary ''),(36,'32JSOxdX6CDOPB21J6NNUcEp3My7lwzXjqYuvK6umwE=','7OO2Hl57sAPECh+1T9kCGKwAH9k8mjeJpNTqj3NBliw=',_binary '',_binary '',_binary '','ADMINISTRATOR-Useradministration','components.core.auth.User',_binary '',_binary ''),(37,'rLPy/5A3ghwGqYGtyiPzBqVm2qQejdu5nGJImjsvHus=','1zqPcHyfxCl2TV1ONrX96uHZI6vHdG8zRTjzwMxt3wQ=',_binary '',_binary '',_binary '','ADMINISTRATOR-UserPreferenceadministration','components.core.auth.UserPreference',_binary '',_binary ''),(38,'yKJJ8HziKAYw56NvA2HHMkTVPwqiHP4I+H5gSu+KVdw=','IGLYBUbkyKeHMv68dT6V/8umbIu4Tc0SwrWj7oKX3ko=',_binary '',_binary '',_binary '','ADMINISTRATOR-UserCredentialadministration','components.core.auth.UserCredential',_binary '',_binary ''),(39,'cV01FRVtj1odPIJm+atBbRQXMrgb6ctXi8fukpq6JeY=','v5elAETsBRtF9M1TfyzRMiGEJEdjWtSG4ceh/Gja8M8=',_binary '',_binary '',_binary '','ADMINISTRATOR-Permissionadministration','components.core.auth.Permission',_binary '',_binary ''),(40,'EIv2wtc/cC0N/ionvu6KyQYcRgyy8hvlqwSyqBvznI0=','6FmSfycImNibdYvCHn0OfGULhV9dzcraLIoTEeOgk6A=',_binary '',_binary '',_binary '','ADMINISTRATOR-Institutionsadministration','components.core.auth.Site',_binary '',_binary ''),(41,'VpT8fUuv1L/V+f7yWZ3jXzCMYO3TTKoqrng1dUHRgGw=','E3Iq/V8FTGO5FTXVRWdm2i2qu9raJ7IJAVDrdwVoTN0=',_binary '',_binary '',_binary '','ADMINISTRATOR-Pdat-Pseudoservice','components.psns.LabPseudonyms',_binary '',_binary ''),(42,'qFVlkOX2adFz/I4CPcSW+6pQkcrRYTS4HdrAIA5mvIo=','oG9ASMNIwz2nZ+hmtnsX1j3ylm0ARy5GAzUOYN3x7t0=',_binary '',_binary '',_binary '','ADMINISTRATOR-UserApprovaladministration','components.core.auth.UserApproval',_binary '',_binary ''),(43,'ypqy8giPhFUhKtL3V93ZdkBiFIhAQsnOBX3k8Wsd1/Q=','LcVusUTdLOP5QknjUmnrfp/KBldTnMAtfunm7eDlc1U=',_binary '',_binary '',_binary '','SUPERADMIN-Roleadministration','components.core.auth.Role',_binary '',_binary ''),(44,'OsMBsdqBRkKZNYfe7jD/g2VVQ6rhUzbk/QWfPJRzBrU=','tRsB3ulDA0NEQYfBy1SgJkeqxvSfYgNAD6E/mbM1JXI=',_binary '',_binary '',_binary '','SUPERADMIN-Mdat-Pseudoservice','components.psns.DocumentPseudonyms',_binary '',_binary ''),(45,'zPRPd+dlYWQocN3dKcp8ofbTT63ok+xeTSIoQicludk=','+ZKzPUA4nt9nhMgdxKZq01ku2DZnTA86mDLvq53ou6o=',_binary '',_binary '',_binary '','SUPERADMIN-Ident-Pseudoservice','components.psns.IdentifierPseudonyms',_binary '',_binary ''),(46,'aHz1VSbumUxZBGss0MUZuywF7KEwj7ErrHyx4zD4dWU=','Fhbtz1BVLMkFQZmtBlxyO4lGk209+GxMQRnMFBMkpaM=',_binary '',_binary '',_binary '','SUPERADMIN-Login-Protokoll','components.core.loginlog.LoginlogEntry',_binary '',_binary ''),(47,'gVBrV8BlBRCHibcc4vALP53OtCIrx+wbtwydL/JsAhA=','ulqTRbhKoKfXrRSfTXl/pl8f5KSU3lSUE20p3pSghu8=',_binary '',_binary '',_binary '','SUPERADMIN-ParameterStorage','components.core.auth.Parameter',_binary '',_binary ''),(48,'HocIPaNXqZVMLqBNsWW+6Y5KnzVKDNRIs0/8wa2/1B8=','DojeXcYdidKAaBRdRdoKeo4Z/x9OaWjKzjz/TdpBpmg=',_binary '',_binary '',_binary '','SUPERADMIN-Idat-Pseudonymservice','components.psns.PatientPseudonyms',_binary '',_binary ''),(49,'HcZwV2TbSTT5vNbpbgoG3ZD6v0ySs2MWg4Elw87qazY=','B3TTOrjxECZn08bo8ip2ttbqsUnnJFD/UCnQSZ/FVPU=',_binary '',_binary '',_binary '','SUPERADMIN-Studienadmininistration','components.core.auth.Study',_binary '',_binary ''),(50,'4rtuaeb2zzbF6l2NX1d7pyDL4m0O8ZDEdcfFZC6LoxQ=','aPKD9XNnWIikwTl6+Ets370bHnOpegT/qEXYw3eSaIU=',_binary '',_binary '',_binary '','SUPERADMIN-Useradministration','components.core.auth.User',_binary '',_binary ''),(51,'7ao2NpISt3YKNFlkrOpFADIlPg/9X/tDhX8WjVMB9go=','y42C8YEBjs9e/UPf7bT5YJxbsdioMYK029C7lKwz0UI=',_binary '',_binary '',_binary '','SUPERADMIN-UserPreferenceadministration','components.core.auth.UserPreference',_binary '',_binary ''),(52,'8LYFeAzKOuc77IkfoCsXvxebD1MYmgjIVUpTIi9okPo=','L5Y5i0X3n7PuoEUrUOhPaC9NT4lDb+D4yJtzyPbijEA=',_binary '',_binary '',_binary '','SUPERADMIN-UserCredentialadministration','components.core.auth.UserCredential',_binary '',_binary ''),(53,'mrGKjVLcwheM+GwbvtKZxgwY9mr1F+MCAYVAZQRJxOc=','ziI9cIoP8wzm8Us/gx2Q+aT6oWmdEjrJ8B9g0IveORg=',_binary '',_binary '',_binary '','SUPERADMIN-Permissionadministration','components.core.auth.Permission',_binary '',_binary ''),(54,'Ce/Hnikme6eFkUBUuBLhXxZXH8VKJDtmftV6E1rSeKk=','DKaxe1JKCp6Sz6VKLo3+9nyd9rRJ+t1/2YJFgpRvFu8=',_binary '',_binary '',_binary '','SUPERADMIN-Institutionsadministration','components.core.auth.Site',_binary '',_binary ''),(55,'tAJ5AcWB7jO0Q11SgL+ydkXRhRj9RWx22zKWQ9sh8m0=','cIdmgfW+qcB3aDCBj5Msb3TWGMthP5OJ0vat/vMNBu8=',_binary '',_binary '',_binary '','SUPERADMIN-Pdat-Pseudoservice','components.psns.LabPseudonyms',_binary '',_binary ''),(56,'SGvRfbB54eeN239ikKXuYr936Na/rkvkEIvnpc9u7RA=','7MOFmAIAZ/VgSNkhq82q55eN3qh+Ax/VKM+KCr5kqyA=',_binary '',_binary '',_binary '','SUPERADMIN-UserApprovaladministration','components.core.auth.UserApproval',_binary '',_binary '');
+INSERT INTO `a_b` VALUES (1,'Cy8/qJRtYTF7fVqtwrkXEhks0vFSx1VOvM38R0OJYjY=','24sMuIAJioLbfuGLmyhm/DlyO4KcC6m5B9LhbyPrUhs=',_binary '\0',_binary '\0',_binary '\0','READUSER-Roleadministration','components.core.auth.Role',_binary '',_binary '\0'),(2,'bo0xvFmbBuVHGLrRphdcBUONCIwTAhwGMPXYXCDpBEs=','QhDVSFvJMSXWJ8KVqCcVXlKAhi2kcB4GJioE3G1tJrw=',_binary '\0',_binary '\0',_binary '\0','READUSER-Mdat-Pseudoservice','components.psns.DocumentPseudonyms',_binary '',_binary '\0'),(3,'zRMbTCrGzDLq/l+LnjDlJ7f94RhmzMroa+xTBpOWqMc=','ZrAqtZ2X/P0+7e8D2sEJ8T+hCBE7IvH14QC6l7U4zCA=',_binary '\0',_binary '\0',_binary '\0','READUSER-Ident-Pseudoservice','components.psns.IdentifierPseudonyms',_binary '',_binary '\0'),(4,'Nai/68/lYDt+KoEyLlQ/VQi32hQKjdlHLZWlZr6u9Mo=','S7yX5qb3HdIdhoDGy+PvKJWEskrZZG1mxxpH01d82oo=',_binary '\0',_binary '\0',_binary '\0','READUSER-Login-Protokoll','components.core.loginlog.LoginlogEntry',_binary '',_binary '\0'),(5,'DxaEYzbqDRj9UwzBHtNrrH7ebtR9lyZ2C4w614qScMk=','NcLkyjTQGgw1j/n+SrIZyfgq6TfaClYyAV7YlNUciro=',_binary '\0',_binary '\0',_binary '\0','READUSER-ParameterStorage','components.core.auth.Parameter',_binary '',_binary '\0'),(6,'83hjKGgVA+T5L9YaS37ZqBKq27pXrebnGm2DRP1ZNI4=','TVcIIuBfM4RHLfyqjYXmyfuJ3hGoZjkgYARSnAtCXmw=',_binary '\0',_binary '\0',_binary '\0','READUSER-Idat-Pseudonymservice','components.psns.PatientPseudonyms',_binary '',_binary '\0'),(7,'dj2km7zCn8GpdoQpYzwqaXMxQvfRuBtQR0fod5gsqcE=','W1xi5GyFnRrVYEtKmB03kAGnxYF8Yd+oU5aa1GXsrM4=',_binary '\0',_binary '\0',_binary '\0','READUSER-Studienadmininistration','components.core.auth.Study',_binary '',_binary '\0'),(8,'p08WDKW7cSHcHXEpKtQ5Rlr8A1J+b0zGkrnq3P9FCCM=','c8c+wJNx9PT4Twk/N1b+z8lc/ViQxBuPJ81Ygbv6juE=',_binary '\0',_binary '\0',_binary '\0','READUSER-Useradministration','components.core.auth.User',_binary '',_binary ''),(9,'pcG8oXgq+HzaFPyNrCL+9KmljhLW9AagH85z095hlxI=','G7Qy1Ch8xlnzfjpd+pLipkkoWuv4yk8k3vwfNInrOpg=',_binary '',_binary '',_binary '\0','READUSER-UserPreferenceadministration','components.core.auth.UserPreference',_binary '',_binary ''),(10,'yzDnK8LAZgKRrSxRrfldUPLLHgtlZ6GcCEg4gzgxpXM=','TdngXS5Ga5EXE1NLH4NA4YdnrgeayerG60IN7h/IRAc=',_binary '',_binary '',_binary '\0','READUSER-UserCredentialadministration','components.core.auth.UserCredential',_binary '',_binary ''),(11,'Nvn6W2w1H/fJIzv4+4n2mTC0qwhTijKMIhx1zGF3S64=','JESvqeTYPz102YNp7SrvBZ3heppu8Uds4Y2SURP8rxk=',_binary '\0',_binary '\0',_binary '\0','READUSER-Permissionadministration','components.core.auth.Permission',_binary '',_binary '\0'),(12,'+y859PxpyqtxkGvIWohJJQEIpTQhPDl06yN+CFacSS0=','I0oXX0sSltgyJ2h9HyarP0Ktywa6tgnchsLquZsFd6Y=',_binary '\0',_binary '\0',_binary '\0','READUSER-Institutionsadministration','components.core.auth.Site',_binary '',_binary '\0'),(13,'NlMQsvDVkomlR0VXQhlZbAqNufxfemVxeqkgtajJST8=','17x3d0TziNAGRLqkoUIKjeVZOyHIq3SlSoPPUAGgpxQ=',_binary '\0',_binary '\0',_binary '\0','READUSER-Pdat-Pseudoservice','components.psns.LabPseudonyms',_binary '',_binary '\0'),(14,'604jmS5bHvOohx9qoibiyB1QhkFi3kO7mUDpfItBndY=','5h5PTjkh8q+sgUteDh8OZz5J4TdBmX6aWXgMrZ8yxpM=',_binary '\0',_binary '\0',_binary '\0','READUSER-UserApprovaladministration','components.core.auth.UserApproval',_binary '',_binary '\0'),(15,'uOF83JVuoZpmFWwS0tYYWKkGYI34G45r927j+cmOBcM=','WtdNlciHtJwS3TzrsuPL48SYleBxTXXkVj2+cYdte80=',_binary '',_binary '',_binary '\0','WRITEUSER-Roleadministration','components.core.auth.Role',_binary '',_binary ''),(16,'TQBYMrHVoJWFusu36KqoUh1U20dIOAxsvaajxkJVOD0=','A+E3s8rxxG0SrkJ/oAig9ZchCEZ0/x1j6mc6VLoS3Kw=',_binary '',_binary '',_binary '\0','WRITEUSER-Mdat-Pseudoservice','components.psns.DocumentPseudonyms',_binary '',_binary ''),(17,'qnefpXvDh7mzrJL7Y9DdZRclEBXUzOajTUHfUSDMmNw=','EGLyBdGF9jW2AEvoYTvpQqQl9bo4GXFGWRhKJ28g6e0=',_binary '',_binary '',_binary '\0','WRITEUSER-Ident-Pseudoservice','components.psns.IdentifierPseudonyms',_binary '',_binary ''),(18,'Cqc1yRTJq/RGKQqEFMUYoITKRgvZfkqqlbDtLTs8oC4=','/d1W5bzcKP8krcKzIeFWJSgj8RRu4Z3e+aZUJOFmsyE=',_binary '',_binary '',_binary '\0','WRITEUSER-Login-Protokoll','components.core.loginlog.LoginlogEntry',_binary '',_binary ''),(19,'FaPw7HqKRmPoEDN47rrSJNniTW0FGAKrhCORxs3ds7A=','ZS8PEm6gUXLOB+zn5X3mhJZB9/MFWKyC85E+NUuEXC0=',_binary '',_binary '',_binary '\0','WRITEUSER-ParameterStorage','components.core.auth.Parameter',_binary '',_binary ''),(20,'pJnywy6siCxXt9dRJAroxYOAld0Yz7dIPSRIa3cheTE=','paMKWvz0fR88weRQoelIIX6mpXI06u80b/IY2+HGU7s=',_binary '',_binary '',_binary '\0','WRITEUSER-Idat-Pseudonymservice','components.psns.PatientPseudonyms',_binary '',_binary ''),(21,'HQizYjzx/sK03H8K/z4K0dzfG68JsnCpb5qn7u9Yl74=','whYXbuB3rvjUelevfnog8AiV2VBw1V3aZIbBfUIIbzE=',_binary '',_binary '',_binary '\0','WRITEUSER-Studienadmininistration','components.core.auth.Study',_binary '',_binary ''),(22,'ndbGUahSCt2UcX0RfSW8UDVLNfkMmjMS0/9aTbzEyYg=','Wpim8ns0kmag1Wk9O85i4ASKqITnKbcYNVuORkPg1Ak=',_binary '',_binary '',_binary '\0','WRITEUSER-Useradministration','components.core.auth.User',_binary '',_binary ''),(23,'io0t7kX6TpQe31bh5L5cqJO1M3rZKmW0XR3aOXgmGUc=','THJh8LlPB1bGeq35LIjpBOz41IsUAYRdDkInp0HxKok=',_binary '',_binary '',_binary '\0','WRITEUSER-UserPreferenceadministration','components.core.auth.UserPreference',_binary '',_binary ''),(24,'yPkNxbbcblHwYY9sK6bDCOlSzMUcX5hC9wNGY9va1k8=','m4FvHrR+8E8pqvSvHUABkAtP/BNclQ70wIDwWasxfkQ=',_binary '',_binary '',_binary '\0','WRITEUSER-UserCredentialadministration','components.core.auth.UserCredential',_binary '',_binary ''),(25,'RoQm0TWgv2u6cZnVapYAHwRZxspA28FvAQGSrFIiXV0=','4Fy7du1zEFSVKVRgdKqCIUW4pwEai/fL5+nqFH8oOEQ=',_binary '',_binary '',_binary '\0','WRITEUSER-Permissionadministration','components.core.auth.Permission',_binary '',_binary ''),(26,'/VhkWRShvXi4IiSDsRq/coi95Or/kFo17JUJA63qNug=','2HPyCdyubnjq7c+yDmd4qOtI8L4buF9w+A5tQacgQ20=',_binary '',_binary '',_binary '\0','WRITEUSER-Institutionsadministration','components.core.auth.Site',_binary '',_binary ''),(27,'sCr3jjtMg1HR8WpPqMlAvbh2c2qwk8Yz9G4AC2T6N+U=','e+z1Wuq6zsdJ7BN50pKiTC+huUKsCQG4DyfH2OHQQUY=',_binary '',_binary '',_binary '\0','WRITEUSER-Pdat-Pseudoservice','components.psns.LabPseudonyms',_binary '',_binary ''),(28,'ON0cvXBh2YGvgAy8gUWj8lunXJfwmEZUN9Gp4v3W+G8=','gxYKv/JSoZPz3Nw2aKEPX9LEgWJX8MtAUM711pvqPNA=',_binary '',_binary '',_binary '\0','WRITEUSER-UserApprovaladministration','components.core.auth.UserApproval',_binary '',_binary ''),(29,'4/CzqBdmHsvDmk/MS0s6sSI4bxeg+Lcz+mJARCyKBV0=','f3iFAcrcA/OWlbg6ewukgDNYj+PM/difh9a9u4t36zM=',_binary '',_binary '',_binary '','ADMINISTRATOR-Roleadministration','components.core.auth.Role',_binary '',_binary ''),(30,'EODt6aHy+bGVbDiYdCW8dPRoVaQfUB1WLmHUYYoaiHw=','O/x05mLPKMVMEPAIAGYZluFUUhaVp5KnBd0O4wngKMs=',_binary '',_binary '',_binary '','ADMINISTRATOR-Mdat-Pseudoservice','components.psns.DocumentPseudonyms',_binary '',_binary ''),(31,'UHu2NNr1MNC+kFDcTXfMkiYd5ADRJfhh+kB/ncUqPTw=','vsVX3TJ3QfKX32cPOtJGmDwOYJ8pQl5CqG3mug+0pgY=',_binary '',_binary '',_binary '','ADMINISTRATOR-Ident-Pseudoservice','components.psns.IdentifierPseudonyms',_binary '',_binary ''),(32,'FBFbUs+NeK69frpGrC+A5iQoubcpQbaxHK+gDxwVgns=','mnUdzNAkB6AkyHlIgjqnqLULbr0DgiVl4pLxxvwRNpQ=',_binary '',_binary '',_binary '','ADMINISTRATOR-Login-Protokoll','components.core.loginlog.LoginlogEntry',_binary '',_binary ''),(33,'wnpLX2jOoAOA0yxewJShZUSGUNAmlbnIzO60V0AusjI=','P5V4ZoU/WCsU6Fg9CH7xz44U7mMy/mpRQG0DzeddXls=',_binary '',_binary '',_binary '','ADMINISTRATOR-ParameterStorage','components.core.auth.Parameter',_binary '',_binary ''),(34,'wFWNxG27u6JhxwXKxDQFGdy4ytR46jTQ7UbaJYUGyYQ=','GPv0DECa9XDOjUi7ewwzX6VzeB4Y26ImNUaTBrERRAI=',_binary '',_binary '',_binary '','ADMINISTRATOR-Idat-Pseudonymservice','components.psns.PatientPseudonyms',_binary '',_binary ''),(35,'F1Kf3fPL9R96FIEtphCkJD7JM7b43/ZbcFAyfxCP5XM=','cDE6Q/tvBFDTwAlNLx7v61S4XyhXo6CvmLORxA7ofKo=',_binary '',_binary '',_binary '','ADMINISTRATOR-Studienadmininistration','components.core.auth.Study',_binary '',_binary ''),(36,'TRxijS/+oqMOqPJjEeNzwsLMZppfaqr4Sv/Sx85Icjc=','RiR1XzX6gHZV1oijG3cCMl7q41VjGenXXmXrIJPGgYs=',_binary '',_binary '',_binary '','ADMINISTRATOR-Useradministration','components.core.auth.User',_binary '',_binary ''),(37,'O0x05vZ/jWnqdZsuweQfvhE9TofaosBXBYHbLae6XhM=','CVZiBICsJiGWrKcUiqZcilvDq9xN4qWFnpTazIIyMmA=',_binary '',_binary '',_binary '','ADMINISTRATOR-UserPreferenceadministration','components.core.auth.UserPreference',_binary '',_binary ''),(38,'bVybIIONjEbICIjoY0ptLSSM0o+7JqEJqlxSy/qj8Ak=','kO0I1VA5LHWtYn5sX2AsEJBzFyxSw10k0R0TAQOV7e0=',_binary '',_binary '',_binary '','ADMINISTRATOR-UserCredentialadministration','components.core.auth.UserCredential',_binary '',_binary ''),(39,'zFIGcv9pBnsu/JWp8W+SYc+6dvpFYycwUWEoyWyCkl4=','0nzLMepi02ch/i5NlONovIdtISfDt5AmdXrAcAXdwzE=',_binary '',_binary '',_binary '','ADMINISTRATOR-Permissionadministration','components.core.auth.Permission',_binary '',_binary ''),(40,'OpRtbkJzxlbW6l4hTAcI0jK8mJJ4/oSfQk4HJBRCImE=','vZ+Jdob90On8eFLyAhKDXO3Cb9T24N4nEbmb/a4kY+M=',_binary '',_binary '',_binary '','ADMINISTRATOR-Institutionsadministration','components.core.auth.Site',_binary '',_binary ''),(41,'JSdV8D+v/bbMAmFPEg/fgJSwdtAJYVF63EaouyMrmJQ=','tBWlyOY7NcyTkAa0204hZmeA2XFqBB3vDGLXxr01cG4=',_binary '',_binary '',_binary '','ADMINISTRATOR-Pdat-Pseudoservice','components.psns.LabPseudonyms',_binary '',_binary ''),(42,'UhNxsvFAx6vM2/VuJ7r5CAKj0zaag/M7djaJW3Wpvrc=','uahCnkEqQrg4aih/OhxH1s5WQNFjjh8gB1DeQQEe0qo=',_binary '',_binary '',_binary '','ADMINISTRATOR-UserApprovaladministration','components.core.auth.UserApproval',_binary '',_binary ''),(43,'lq0zGV4F4iR5PowMCJ9VXx/XsUbzlgGFViaoxLwxY30=','ISYWXA896gBIeCT9vMDYl6HYEwI8sTBeJPu/053GDgc=',_binary '',_binary '',_binary '','SUPERADMIN-Roleadministration','components.core.auth.Role',_binary '',_binary ''),(44,'k98hNVu/TvuZLb00c7ouCcuWofA4ZF+KnawPJ6WbdkY=','CCTGrfd6J5CKlpPVs98waox/LP3J2fo25g1t0k+zznY=',_binary '',_binary '',_binary '','SUPERADMIN-Mdat-Pseudoservice','components.psns.DocumentPseudonyms',_binary '',_binary ''),(45,'IOcJJKqGEiOQzYhkA04T+fjLcLEBprNVl73OygKwKdg=','63fzWooSyXy2VTvdv97C19VjxtBk/CkGARyD+KVe1RQ=',_binary '',_binary '',_binary '','SUPERADMIN-Ident-Pseudoservice','components.psns.IdentifierPseudonyms',_binary '',_binary ''),(46,'jh8v8gJN7A/vLWv/epTVTNogsC3vChsCfAoJuKOrljI=','tO5vKJSgqR+YqWnL22N2Tc42YEZt9BpBfIXPf8oyw/g=',_binary '',_binary '',_binary '','SUPERADMIN-Login-Protokoll','components.core.loginlog.LoginlogEntry',_binary '',_binary ''),(47,'03zW2sI6MTn2puzga5qvbmhqGQ9yPr9MY1ePgURFCYk=','qEG/KEyknUv8W5CgZMovqXEixIqySm21FhvIVjqcfuM=',_binary '',_binary '',_binary '','SUPERADMIN-ParameterStorage','components.core.auth.Parameter',_binary '',_binary ''),(48,'A4W8UI0TwqvkWt9MpB8nSc1IgOR2JIJ6ebY/zzshxVA=','/wTY+opYWlvCI7cyZlNZ9OUdBl9oRA4D6Ho48gCwYaw=',_binary '',_binary '',_binary '','SUPERADMIN-Idat-Pseudonymservice','components.psns.PatientPseudonyms',_binary '',_binary ''),(49,'vWz/J1VyuIANCb1NZXyWUJfJrV9EfVfwahulRqSgyfg=','JOURfssbX8FRr8FxmQ0yJ1aB+aOJ4MlhkZ8BBuDBgcA=',_binary '',_binary '',_binary '','SUPERADMIN-Studienadmininistration','components.core.auth.Study',_binary '',_binary ''),(50,'YYfJgn9o7HT+nX13Aow0nqadHu+oBTACjA6XHMenLms=','L+74ds7f+p7hoj3Jxyes8IePUQEc8n9SXX1nrhg8dQ0=',_binary '',_binary '',_binary '','SUPERADMIN-Useradministration','components.core.auth.User',_binary '',_binary ''),(51,'AaAldIu1WK8AZ4zGFO/Nb8XTWSAH3F1KnTwIpvqI4YM=','/Ea9gtBiqPeHHWNphHSdncsQBgm2kL3EWI+wpxuT1wU=',_binary '',_binary '',_binary '','SUPERADMIN-UserPreferenceadministration','components.core.auth.UserPreference',_binary '',_binary ''),(52,'/dw+7eF5dd1kpNFZRbWQNBAJ8+s0rWI0PLgj7itd80A=','X3eatY3FOvOLW7V2+rjo3CGSkg9efy+DAqV67SNGvnI=',_binary '',_binary '',_binary '','SUPERADMIN-UserCredentialadministration','components.core.auth.UserCredential',_binary '',_binary ''),(53,'YcfEdTa9HvaMCIq+iXHfy3PKZtEJ6yLoB6bKPBSXWBA=','YmjmVFOHUv1oWBMwLWiQsNdxv2SuKFKyQEguclC0OIk=',_binary '',_binary '',_binary '','SUPERADMIN-Permissionadministration','components.core.auth.Permission',_binary '',_binary ''),(54,'0QIwL0EjYOSPF7xxGui4DezrVdQwlIYYNMd1JECFM0Y=','lwQxyzoYsS85lNa4ehMIqKr9cdR/5ni8aVNHSfsS3Bk=',_binary '',_binary '',_binary '','SUPERADMIN-Institutionsadministration','components.core.auth.Site',_binary '',_binary ''),(55,'qcDsBsJnt7Qm2WYf4v3C60Jf2klmebT1J/LKquKwHs4=','AHNs4gGLMMwhySXAsXncgO3OBA4x5j5spaUtBEknoes=',_binary '',_binary '',_binary '','SUPERADMIN-Pdat-Pseudoservice','components.psns.LabPseudonyms',_binary '',_binary ''),(56,'YGkHHTIeGvhuUyPO4hCKS/FXbMqEN/oMM1f+F32f8Z4=','T0lt6Z1DdKTnZZLRIBrPawWblAguEL8jtXpAPf9FiCc=',_binary '',_binary '',_binary '','SUPERADMIN-UserApprovaladministration','components.core.auth.UserApproval',_binary '',_binary '');
 /*!40000 ALTER TABLE `a_b` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -504,12 +508,12 @@ DROP TABLE IF EXISTS `a_b_a`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_b_a` (
-  `id` int(11) unsigned NOT NULL,
-  `REV` int(11) NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `id` int unsigned NOT NULL,
+  `REV` int NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `a_e_id` int(11) unsigned DEFAULT NULL,
+  `a_e_id` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`,`REV`),
   KEY `FK2tio79mw1nntr6428tafdw4q3` (`REV`),
   CONSTRAINT `FK2tio79mw1nntr6428tafdw4q3` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
@@ -533,12 +537,12 @@ DROP TABLE IF EXISTS `a_b_b`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_b_b` (
-  `id` int(11) unsigned NOT NULL,
-  `REV` int(11) NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `id` int unsigned NOT NULL,
+  `REV` int NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `a_e_id` int(11) unsigned DEFAULT NULL,
+  `a_e_id` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`,`REV`),
   KEY `FKcahapn92uyypgm0swwvi878a1` (`REV`),
   CONSTRAINT `FKcahapn92uyypgm0swwvi878a1` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
@@ -562,14 +566,14 @@ DROP TABLE IF EXISTS `a_b_c`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_b_c` (
-  `id` int(11) unsigned NOT NULL,
-  `REV` int(11) NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `id` int unsigned NOT NULL,
+  `REV` int NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `c` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `d` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `a_e_id` int(11) unsigned DEFAULT NULL,
+  `a_e_id` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`,`REV`),
   KEY `FKawiqgaw8m54i5hjj8x0sgr1c0` (`REV`),
   CONSTRAINT `FKawiqgaw8m54i5hjj8x0sgr1c0` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
@@ -593,12 +597,12 @@ DROP TABLE IF EXISTS `a_b_d`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_b_d` (
-  `id` int(11) unsigned NOT NULL,
-  `REV` int(11) NOT NULL,
-  `REVTYPE` tinyint(4) DEFAULT NULL,
+  `id` int unsigned NOT NULL,
+  `REV` int NOT NULL,
+  `REVTYPE` tinyint DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `a_e_id` int(11) unsigned DEFAULT NULL,
+  `a_e_id` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`,`REV`),
   KEY `FKfkam2clsugsog4f5g3x8pwspj` (`REV`),
   CONSTRAINT `FKfkam2clsugsog4f5g3x8pwspj` FOREIGN KEY (`REV`) REFERENCES `a_xx` (`id`)
@@ -622,7 +626,7 @@ DROP TABLE IF EXISTS `a_d`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_d` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -638,7 +642,7 @@ CREATE TABLE `a_d` (
 
 LOCK TABLES `a_d` WRITE;
 /*!40000 ALTER TABLE `a_d` DISABLE KEYS */;
-INSERT INTO `a_d` VALUES (1,'HmVt57yoZErrgx6bXZyqO7dcT7lmwnuj5b840ufQ1t4=','/+WrSELhcQqdASZFSTXHASYHcRpP1xPalpB2uQcfiwI=','hat nur Leserechte','READUSER'),(2,'jQJ/cSOiPWZbbYN7uY/dH9XIgHoe5ftpll4yABeoYd4=','++Wt4OncI1P30Nr8Y8TWoVqabx3aiPrMKFNNcFbDEIM=','hat volle Benutzerrechte','WRITEUSER'),(3,'DrloJKKPOTlwbQHVU+iYqXdVv0ftSjNl1bHxGZQn8xM=','roaK+FIwRiyThP2AzfowWQh7GLBKDYZnJYhsbB88QFo=','hat alle Rechte','ADMINISTRATOR'),(4,'T9mS46+yWuZNnZY26x3PxJ2ZELBh+nvRdHpmjIt+c+g=','Pxqym4vSPCTxm4MsgOns4cBsfSWlthEWQU3LfZm9ePw=','hat alle Rechte','SUPERADMIN');
+INSERT INTO `a_d` VALUES (1,'Z/PyAGg/Ftc4kFIiZyB3rBG0aP1yGrAPI+FgUHKvpqw=','iW72aIGCM4M556jyWS4FGaaltGAx+55V2BdGp2E3fEc=','hat nur Leserechte','READUSER'),(2,'yhtkDPW210maeaiVEknUbq8CxbGQDW8+wrEZoHPNiQw=','ZgB+jdIQ672bwc9D+3k9MeyDZkNnR093bHO7qdWFQnc=','hat volle Benutzerrechte','WRITEUSER'),(3,'XOF5qlM5y9ZAWR5p57A0GYK10rnxK7siL+BDrCcgXjI=','7lRKyQJLocbou4sRVLODpxT48OWkeWpx7GsVgMlY0F0=','hat alle Rechte','ADMINISTRATOR'),(4,'siqMUBR9XpeYnyFHRP/rqEa7fE5evL1fzm9zbNFGvT0=','fHxds1sfiwmGugFFhfuMbLnk8PaGm5ALD5Q+BBN4r9I=','hat alle Rechte','SUPERADMIN');
 /*!40000 ALTER TABLE `a_d` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -650,8 +654,8 @@ DROP TABLE IF EXISTS `a_d_b`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_d_b` (
-  `b_id` int(11) unsigned NOT NULL,
-  `d_id` int(11) unsigned NOT NULL,
+  `b_id` int unsigned NOT NULL,
+  `d_id` int unsigned NOT NULL,
   PRIMARY KEY (`b_id`,`d_id`),
   KEY `FK41nys6brdy8k5i4vyf97lcubs` (`d_id`),
   CONSTRAINT `FK41nys6brdy8k5i4vyf97lcubs` FOREIGN KEY (`d_id`) REFERENCES `a_d` (`id`),
@@ -677,7 +681,7 @@ DROP TABLE IF EXISTS `a_e`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_e` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -694,7 +698,7 @@ CREATE TABLE `a_e` (
 
 LOCK TABLES `a_e` WRITE;
 /*!40000 ALTER TABLE `a_e` DISABLE KEYS */;
-INSERT INTO `a_e` VALUES (1,'T2bWHny7So/0iGuW3+4TtJsCcQrDInX/blKsxCPQK3g=','14qk4FY7Vpkjkvy4jCFch8hr8zEMngYyGBLg1UPoOVg=','JnLKwVLsFdomhOUUzG1yacN6hCzwiN+bapK+Ko3PyE8=','miaVnXnIcmS25XZR02n6Co7+ERAQs1BjBBtOa6qlazc=','eXEx6k7Cc41ubCGllqix1M4hEmKMnSZxr0RWa8QELRI='),(2,'Z2yHHR5i+HPT7QnOvjm1NmYT9BXyT0DMhyavb4NPals=','fMETUnpJQOZ+2jCCQwq759m9T8ROVfS3qDYmVNpLw1w=','ZHAQ285zl/mLxtoLKbJsPvrdV820aGFovvuBcb8azbQ=','lIR7IkUHvkcgr5iZ49BP4sQEZb/dnLq+IMk5loAJGZY=','ms4GJ6rzI8iS8KLXanByz8sDpoNvMlkRkHf2qUW6S2M=');
+INSERT INTO `a_e` VALUES (1,'3XxZv8N1HTfSRc9XfFNm13ucIXO90ZRBugU2fsBKXI4=','EV0qAh7nAz4PGZo+a0YTO1rzrDqFC5O2p+AWw+JUb4Q=','j9kTM1J1AjQJaVlf04VPukqgIQZus1kPH5xX51LJf7w=','eQrjQ2/ocTLrvI4H8X3giSywxR4B31DATmId2vgtp7c=','ev6hRNhOAfhwLjlQD5XndEfaY4xm5Qff4RlIBn6lJvg='),(2,'z9DzKM/eywffXXJtZx8kmTkuopgLKz5rs20p6BOrZmo=','WGtdkRszXWG6/E8AaAqaBvI1JgL9uWjnXOWPomysZPI=','whMHmISTuZCteiGmNrL7djVDhUsDI+vrI6J55+Yy6wk=','hdq2hwbreROY5AIM1Pr193Q2dcJpdpzX/MaevAz/Ht4=','ThOn0UWpeRnPxuiVBlnIlyEqHuvJJOdtbjTR5VOSBzo=');
 /*!40000 ALTER TABLE `a_e` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -706,7 +710,7 @@ DROP TABLE IF EXISTS `a_f`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_f` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `c` bit(1) DEFAULT NULL,
@@ -714,6 +718,7 @@ CREATE TABLE `a_f` (
   `a` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `showPatientNames` bit(1) DEFAULT NULL,
   `usesKISIDs` bit(1) DEFAULT NULL,
+  `usesKITIDsOnly` bit(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_a` (`a`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -725,7 +730,7 @@ CREATE TABLE `a_f` (
 
 LOCK TABLES `a_f` WRITE;
 /*!40000 ALTER TABLE `a_f` DISABLE KEYS */;
-INSERT INTO `a_f` VALUES (1,'J3T32pE+wvrFN0K0+GEzsgL0oWA8X6QJbv5yfMwTRrk=','jIUPqAe9uEjolIR3QjUIp4pc8/LbJVb7fP0CMhk3gUk=',_binary '','tmJn2aFGuGvAMTSXOhQTb3uT+w0RZuAjV7n1+YWwkc0=','p6p6XHbwGU9+lYcwPMKcocVj0N8v2kk4tcdPK7uQs94=',_binary '',_binary '');
+INSERT INTO `a_f` VALUES (1,'Gf4rugQSN1+mwP4hWExitTagf3uFNQG/buyt+/pkbMk=','LtrTo4RDvN7+EufzEviQA9FaYv1ih8tmIYdtKr58Ibw=',_binary '','FXWBWcTaupXBoRopO0F2T7lSu/SG85lbcne+0jR0QN8=','UxEDIA407/18xTJ21D0A+4pzzZuoUhubIYS9KjvjMAI=',_binary '',_binary '',_binary '\0');
 /*!40000 ALTER TABLE `a_f` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -737,8 +742,8 @@ DROP TABLE IF EXISTS `a_f_e`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_f_e` (
-  `f_id` int(11) unsigned NOT NULL,
-  `e_id` int(11) unsigned NOT NULL,
+  `f_id` int unsigned NOT NULL,
+  `e_id` int unsigned NOT NULL,
   PRIMARY KEY (`f_id`,`e_id`),
   KEY `f_id_index` (`f_id`),
   KEY `FKcnqmsnwxcun1cfilfuo8by78k` (`e_id`),
@@ -765,7 +770,7 @@ DROP TABLE IF EXISTS `a_g`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_g` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `allowedFormnames` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -779,10 +784,10 @@ CREATE TABLE `a_g` (
   `otpKey` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `p` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `h` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `d` bigint(20) DEFAULT NULL,
+  `d` bigint DEFAULT NULL,
   `useOTP` bit(1) DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `a_e_id` int(11) unsigned DEFAULT NULL,
+  `a_e_id` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_a` (`a`),
   KEY `FK8d0fx562osmotk8igxhr0lmwt` (`a_e_id`),
@@ -796,7 +801,7 @@ CREATE TABLE `a_g` (
 
 LOCK TABLES `a_g` WRITE;
 /*!40000 ALTER TABLE `a_g` DISABLE KEYS */;
-INSERT INTO `a_g` VALUES (1,'sLFjethNFcOnBnHIJOqDFNR6txPa6QRkkzzxQBGRM6E=','VTtIc0OR8wA9IG7btyWqhCQWMGQRg4J/3SXgzqoyUfQ=',NULL,'03AxVBkaLTW0Vjyyv06Tf/qPqen/ydCw8zgEXAcuXBjoDr+dC1te2HRs3UaUJl+zjDTfyuYlPs6ESbe8ypFeTfZtwH/oAA///0oV6Yp3m2LwfcB8sefG+UJPxtH8qltam3ZVAYm0IX4jAOCg+/TDkyuJwl5JoVRvzKvGVnhP3Il4zJlLE2inimX0+QTQTVQn7ZojOM9E6IkFcXEmRmIwm7I0o4lBQIK2VkEjA55TVLt5JvDpJRNnysE4q3NfV4UdAvStDCBlQUBnv3it7ovc9w==','Benutzer','kohlmayer@bitcare.de','STA2Z8tNs7EJ/USAgpPyRYTwerKSuVo4b2UjFOElEPzPzrDrkrjUeFIGhh6okIGm',_binary '\0','2020-10-19 11:19:51','2020-10-19 11:19:52','','0171-4659089','SUPERADMIN',1,_binary '\0','admin',1),(2,'Z8oCd1t8lKph95DsaFRBNgVhsNBlK4yXsKnqS0Typ1o=','t8Y3+PFMDFlyVEpclzhiAqUwj97nn+V2+YfFFrE6rgg=',NULL,'Kgn65s2agKiWMXBnH+zj6zqT8LtqYLwZCMNbfI8QH1frqPEEWnjE7YkkLPBSi78fneca1wVgjwZEDF+qu2H+oEVTeClqVW+rpC6U2rarYW/DlGGg1cRHnO58CQreZNIM8oFtlp37lZ2oaB0ghhP0zmMrCK0ZiuIa8blEMCyXta7LA8U9T8dKDDdyfOUNqU/VRIKKzl8ycTWs1s1WnpKB/VGuG0mVtLTywojvuhcSHwDblKJxjkDDsvRxdNSyfdRP/SFbl7hquqoEmV4ha9rVjQ==','service_User SITE','info@bitcare.de','zsMKPgiidqZJkG2vWp2Xmk86wZbSBmStvNENt1BWClQWxninENNw3wbQKBRf7NgM',_binary '\0','2020-10-19 11:19:51','2020-10-19 11:19:51','','+49 89 9430 1309','ADMINISTRATOR',2,_binary '\0','service_SITE',2),(3,'T4QVOHS5TGZEzQ9Kaz8zzV8a7dhHXemqcZvloPhVeJE=','owhhT5jCkVW4SQ99vUk9ccyLCrnj+sg9uRoNOSgPVxw=',NULL,'13fpHo7Kc5UNkSNmPFpi8c7mIqyzaSrtJNzk4OByU5w7i5f6KxscJzKpm13B77OKXnSVGvuWGky3dRCuTJh8rMAufjK+5DKFxTJW6Mb6j2lRqFs5EBLIuElUOmRjSTFkq7IY2aNX2u0AH/fClfHNNQVOu5IgMExYfIKHq2U8JogojSU4SLeKVLjII0wBteJqJSbtcavqkbTPJGbU/fFTDTjGu5tHWAThg5DwM9SmocWQLfHs9C4TJLhzIa80Z04wwQdvEvHSsUnz44OfspnrmQ==','service_User Test','info@bitcare.de','nJ8GknxkzGsxrcf/VlUwOMhI5gVyrqqc5/Bx1sXMb0xoGSKX8iOGwHViQyooGkMy',_binary '\0','2020-10-19 11:19:51','2020-10-19 11:19:51','','+49 89 9430 1309','ADMINISTRATOR',2,_binary '\0','service_Test',1),(4,'XbAXW70sO/UZ/H4XhTE6Lfrc9iraVyMErgbvw30B3Jk=','WR1Rq2FEUveithxwvjuly7i9RRAduU1W6IqVPQZR694=',NULL,'I+Wf+7xPgQdhF0cWHS1Qd8KoTFOre+jh/VJs4vCI1qUGdtWCPO6tU2BEWL3uiNV8jWz0T37RDukaRQeCPWbuiCal5L6wELWl7c9zm6CIl/a1nhfK9UFB5MDl7o00exBcMGGwHZmtMJ8abAYPKe/RMcPrP0zeROZco+0n0n/c06CqIKQr/0E8oyw2u4Ayv1LjinL/xFPxTjXbWDkJT3gZ8DJfZFA6g4aQZtc96CZiMduCyR1E7zF5SULDV6Mky/9/xpJ8NIqmbz2SAeXgHUoWdw==','Benutzer',NULL,'nUuOASdaJeNlLNF+lFQZ03atOXxuNYklwz/bmhsBZr/PpDhZ99jKYyRVwHDCxeXY',_binary '\0','2020-10-19 11:19:52','2020-10-19 11:19:52','',NULL,'ADMINISTRATOR',1,_binary '\0','admin_SITE',2),(5,'ILKOTnSCWtrqa23syggs0QsEW51pc8FLniytTj08mDw=','k+wrT96zEJiWWimRDuIskrMqA+KBOWZXmsfn1A6zzzE=',NULL,'D9i3XCG3wq2MMiqq6/wVcXLbdCxwBqGRHGI3A/PlsHlbA3LrmC0NflCjkPeVt8M/uVC8IXzyMl0P5IgRM/G7MuF6xH3n/+JcOatjc3FxBtt9QhBrfcgUF6F64CoPqKTrRAJce7GAV8VCT7HyQijcx1A+xHAjVlGTqPZBnm317Thkph/2C3vfxDbuMOaOvtm2i2rYClbyGDbFuKCA/BfXI1F6rcPzJjFh+EK9AIIoYxSnX89WnyLpd30zdWqbScwwEC1OGcGDtR/22N15gdRGXQ==','Benutzer',NULL,'CXBqjbXAPYe/vJIwWDm9o41HNr3IC0TauElXFQT8fbKjKxQ2tUFboHAly2TXODHU',_binary '\0','2020-10-19 11:19:52','2020-10-19 11:19:52','',NULL,'ADMINISTRATOR',1,_binary '\0','admin_Test',1),(6,'4WnsKeiq0O6fOCHiLXTXtmi764j6rYJupgTyXNtaoRM=','KV3r0Qtf5hgARBXx6AldJzJte5Z2P80WgMhoWZFUKuY=',NULL,'hnlM56RrXP/Nkvhygf9V4j2Nre9OdKNy+rXISmN4jOxi1N05m+2oMwQH6cfHlB+j2dqsLRvB3b0f8tyo4aSAChpjbBtC/t4hUFOEfmKR12AgTZocTbN+XjjRzZANyw/NjtF1K1PNT6VQ/1H8VKA01PZZ6uhinDDyxss6Lsh56LCG//LK+jbe3ncTzCJvwrQMAJX+PjLeFchWUKhPzCgejAVtJeFb8A9C/OxeI2e/MpqzYWa3w7PBcX1ZtYJmqyP/WHj2s6I8GmIsL0GAr7OSdQ==','Benutzer',NULL,'1mQliVRuMg2WiCCAJ4vf96yMWoXBdr4sNoZlLmYDkbn+FTscpACYp219nMH8ZBAF',_binary '\0','2020-10-19 11:19:52','2020-10-19 11:19:52','',NULL,'ADMINISTRATOR',1,_binary '\0','gecco',1);
+INSERT INTO `a_g` VALUES (1,'KLOcqpHfC6BUZbdmWyp/FjMoXEptolugDy00avBwuxU=','OWqZtEgoQ3Tx5xzEjIT1HguTGUN+PMZciwScBzExY1A=',NULL,'mpyC2o82I7e7H4CGFALaNnp6hbisFyajf3knitTphCIwezOpKrjfTmj44kMyXcXwZg/ND6aXOrBR1SJeDwO29jwvrBcHJAbTn11XPt1R/enrDnPwd7p4zjmwbzBSwUoesYOocDWHXYk3QGCllGjrklbzskpeDVtaZNQurtLf9AgxbMedfKNjEvoWtvQqr+ku0VuajxnM2yL5H1Z1lDEF4XplVF4Mf4zVH7ukf6zPtimiFlM3MBhqkb2+341W1anE5uk4HK8HrDBl7GBDHwQs5w==','Benutzer','kohlmayer@bitcare.de','S1wGjuTufIF1kTb33uK7PtGRCuETQLrHn9gnwAZDMAA0SmqvRGXY9lhRjSsVmAvY',_binary '\0','2021-07-06 15:39:05','2021-07-06 15:39:05','','0171-4659089','SUPERADMIN',1,_binary '\0','admin',1),(2,'f/WYI0J3icAto36eV31qQsYSIU1JdpLmn+GMZYtS21Q=','PR5igTf45U+0kTh0MhOIro2E1ktSLow1n0OyxY0LjK8=',NULL,'t+gFWjWvoQGexoZE8xxGEKds1rddR6sPiseRQuo28hzu1iNdy21r4j0/LXD8oWcDm71ITzVnyMHivB3SzMzo+RsBkxqJ/g/2hzNAHbEhF/xT7stvQsgparoozXq2kaXupg7ToxqOi2Ydg4WCB3eRqun4wH7eBl/5LPrCJ4EFonRFf3yCiSndHbKYHT89bNo75GW1QD4F8OKAhCi8X1hduUlodL4b+nQUcHHVeNwAyFWWMv/7aaqQmvzWfnCVul1ggF8CHwpprJz18WNAouEuTw==','Benutzer',NULL,'VD10xsm7lVxqp31ot9a1tqe0WAuzwjmcJbxPrV3vzzECbcKIvMfBOojKGRUFo/On',_binary '\0','2021-07-06 15:39:05','2021-07-06 15:39:05','',NULL,'ADMINISTRATOR',1,_binary '\0','admin_SITE',2),(3,'ETja7MfxrdyK686f65G0P7QvzZq84zTFeyAhoEMT0AM=','clhEwTN7hnyiWMZz/kt1uRQYaN34FP+A7BsBjOqB/PI=',NULL,'F3J108FtTx7iimOUXqVTMK8mLVFbEGi49/R5RJUBsucb22FsjM7P6qgMyRVk1mHIwjXX1cZUOt0RTFugz5EkHQk8o9L3qEcPjEkloTAZXnBKU/8XsGU4allYbKacoeRugqUgYrkJhZXsxljyzGUoYEwILa7ZBtooVOC5tlCgYK8n8lnjI5B1zU+pz9ki/+KFSb8su+RDJz5nHQGBEk57uXgLQL0h5pv54GfiybgVVE6DEhUE4XIA1vOezgE4k3oASFGHKLfPcA0yvkSu3UUYcw==','Benutzer',NULL,'uaRbOsBm15KeHxc/wgBGRYz7XswUymDLLkQSIY9uWSuzOIworqvYy5U3eZ36Bll/',_binary '\0','2021-07-06 15:39:05','2021-07-06 15:39:05','',NULL,'ADMINISTRATOR',1,_binary '\0','admin_Test',1),(4,'7wlPFcYIZxwEUdJvxhdoB56KTEPIyGhQ2QPVPI8nY/k=','1fMQw/HzdHWypLn3i8rE4+X3BIjq9ZdSfdPr6KVhYcU=',NULL,'vwg6S7Q/WSDfJOATgswteB5SBl3nf0l3YPGZ6uiGfULMuZfoi5oL/b5gEb6ga5rEAokRKTdQCgHzdvvuOH5abrQajNWTeF6LkeOP9ibIf88v3J/jbgEvc4Y+HGevhx0WphYYhuJ5hJWlEbjhB9zFb5wBiClAS4O9i32ZPNlqgIKO3qxMQTLQban2/6deDCh4GD3Re7G/+jxkH+Uoz4ibazllqmTP2xPRKE+geeIy70FqqxXzqYYyqK56w9H4CXL4WdFzNH4jtDr9iXyuV318Dw==','Benutzer',NULL,'74AY8AsNXQAR1VV6Akjm1GHlm5lI8rNBQJnvWDGZ4L+mrSPhNxuImdUQnUZxRRMJ',_binary '\0','2021-07-06 15:39:05','2021-07-06 15:39:05','',NULL,'ADMINISTRATOR',1,_binary '\0','gecco',1),(5,'P0zI3wDUzscUAOz8w0L4D7BYV+IXMXofaimLxmJzWo4=','YBmx3si8hVYycj03wAnk73TWDuMChB3Zk40UtCtCYSk=',NULL,'j9544fJ1NZV2f9MEgmUnJv9jOJzgW8kWK8IGfnBOUNacGVMOO8fI7zfv+uXRkb3qNlXOPGYI3t7Zahm2xTm6Rhf+9nQEc8k+QpqjZcjXbJJm5yP5ybDa8cr2YUPTaE+FGyAnUdF+Kkc4T2iyJm83arkXDCuPFffwqh+JbKrcrewKeAvZaOIFAHbRg1x4rSEwAu//72Y4SmMY73hu7hxIP8lI4wWAtIpszz2ZggYWpdAU7Q7NrHPpif55rsYO77/gqUPLeVl7iClJsfMBDqf/BQ==','service_User SITE','info@bitcare.de','mVfmJi1lxn4wuZbBt0L/TZXmq67sdWxeWKhpWNltkcs0JQcyiIZfLIiyH8wZQeKR',_binary '\0','2021-07-06 15:39:05','2021-07-06 15:39:05','','+49 89 9430 1309','ADMINISTRATOR',2,_binary '\0','service_SITE',2),(6,'d9T9NqL+fSlVjx4Z08mE3c3HGXsIFXYTTN2y1PTlLPY=','24+pLI2ec4P5iXVgVymOziBw9+vpTITjZylnbKwVNFQ=',NULL,'Qdsi0y9MGBqvchRVq15/QWkYJTrHL/q2o96vDplDWl5kzEUotDapzhEB34jhYGTb9rpXnsYA7B3jbKSYELebf062GA2M08VqJv4hZb6yyFrqPZF79MEE2B/dSyAWEoTbUrrV4VOM9jUtLyrRKbLNwKGTgsTx4ISjk0Kb9fAvIlUJc0ln8gUi8sFJdXROZQ0IwHU4l2cfCgsZoGT5+gDyQ9SJuPc7RXlbKGZvXubp4juEI57yZZMd+8Ol73lOmHBDgr8SEUwZSC/EsGfLjPm33g==','service_User Test','info@bitcare.de','uRREutJ6UYTjeA4hPKn6B9Ivds3C+PLmbDZD3M44x7J90MJm8XrSbygLdHKg8JDB',_binary '\0','2021-07-06 15:39:05','2021-07-06 15:39:05','','+49 89 9430 1309','ADMINISTRATOR',2,_binary '\0','service_Test',1);
 /*!40000 ALTER TABLE `a_g` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -808,8 +813,8 @@ DROP TABLE IF EXISTS `a_g_f`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_g_f` (
-  `g_id` int(11) unsigned NOT NULL,
-  `f_id` int(11) unsigned NOT NULL,
+  `g_id` int unsigned NOT NULL,
+  `f_id` int unsigned NOT NULL,
   PRIMARY KEY (`g_id`,`f_id`),
   KEY `g_id_index` (`g_id`),
   KEY `FKf7v2iwn9iynqr3ch8pe83k4sa` (`f_id`),
@@ -836,8 +841,8 @@ DROP TABLE IF EXISTS `a_g_k`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_g_k` (
-  `g_id` int(11) unsigned NOT NULL,
-  `k_id` int(11) unsigned NOT NULL,
+  `g_id` int unsigned NOT NULL,
+  `k_id` int unsigned NOT NULL,
   PRIMARY KEY (`g_id`,`k_id`),
   KEY `g_id_index` (`g_id`),
   KEY `FKkf7ek6w04cb4dkngc4k5xols6` (`k_id`),
@@ -852,7 +857,7 @@ CREATE TABLE `a_g_k` (
 
 LOCK TABLES `a_g_k` WRITE;
 /*!40000 ALTER TABLE `a_g_k` DISABLE KEYS */;
-INSERT INTO `a_g_k` VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12),(1,13),(1,14),(1,15),(1,16),(1,17),(1,18),(1,19),(1,20),(1,21),(1,22),(1,23),(4,1),(4,2),(4,5),(4,6),(4,7),(4,8),(4,10),(4,15),(4,16),(4,19),(5,1),(5,2),(5,5),(5,6),(5,7),(5,8),(5,10),(5,15),(5,16),(5,19),(6,1),(6,2),(6,3),(6,5),(6,6),(6,7),(6,8),(6,10),(6,16),(6,19);
+INSERT INTO `a_g_k` VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12),(1,13),(1,14),(1,15),(1,16),(1,17),(1,18),(1,19),(1,20),(1,21),(1,22),(1,23),(1,24),(2,1),(2,2),(2,5),(2,6),(2,7),(2,8),(2,10),(2,15),(2,16),(2,19),(3,1),(3,2),(3,5),(3,6),(3,7),(3,8),(3,10),(3,15),(3,16),(3,19),(4,1),(4,2),(4,3),(4,5),(4,6),(4,7),(4,8),(4,10),(4,16),(4,19);
 /*!40000 ALTER TABLE `a_g_k` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -864,8 +869,8 @@ DROP TABLE IF EXISTS `a_g_k2`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_g_k2` (
-  `g_id` int(11) unsigned NOT NULL,
-  `k_id` int(11) unsigned NOT NULL,
+  `g_id` int unsigned NOT NULL,
+  `k_id` int unsigned NOT NULL,
   PRIMARY KEY (`g_id`,`k_id`),
   KEY `g_id_index` (`g_id`),
   KEY `FK5xjflkrppygwu636cdxmcj07u` (`k_id`),
@@ -880,7 +885,7 @@ CREATE TABLE `a_g_k2` (
 
 LOCK TABLES `a_g_k2` WRITE;
 /*!40000 ALTER TABLE `a_g_k2` DISABLE KEYS */;
-INSERT INTO `a_g_k2` VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12),(1,13),(1,14),(1,15),(1,16),(1,17),(1,18),(1,19),(1,20),(1,21),(1,22),(1,23),(4,1),(4,2),(4,3),(4,5),(4,6),(4,7),(4,8),(4,10),(4,15),(4,16),(4,19),(5,1),(5,2),(5,3),(5,5),(5,6),(5,7),(5,8),(5,10),(5,15),(5,16),(5,19),(6,1),(6,2),(6,3),(6,5),(6,6),(6,7),(6,8),(6,10),(6,16),(6,19);
+INSERT INTO `a_g_k2` VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12),(1,13),(1,14),(1,15),(1,16),(1,17),(1,18),(1,19),(1,20),(1,21),(1,22),(1,23),(1,24),(2,1),(2,2),(2,3),(2,5),(2,6),(2,7),(2,8),(2,10),(2,15),(2,16),(2,19),(3,1),(3,2),(3,3),(3,5),(3,6),(3,7),(3,8),(3,10),(3,15),(3,16),(3,19),(4,1),(4,2),(4,3),(4,5),(4,6),(4,7),(4,8),(4,10),(4,16),(4,19);
 /*!40000 ALTER TABLE `a_g_k2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -892,17 +897,17 @@ DROP TABLE IF EXISTS `a_h`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_h` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `c` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `b` int(11) DEFAULT NULL,
+  `b` int DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `a_g_id` int(11) unsigned DEFAULT NULL,
+  `a_g_id` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKqxfkgj10b7yjw4hoyoxrpy4e6` (`a_g_id`),
   CONSTRAINT `FKqxfkgj10b7yjw4hoyoxrpy4e6` FOREIGN KEY (`a_g_id`) REFERENCES `a_g` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -911,6 +916,7 @@ CREATE TABLE `a_h` (
 
 LOCK TABLES `a_h` WRITE;
 /*!40000 ALTER TABLE `a_h` DISABLE KEYS */;
+INSERT INTO `a_h` VALUES (1,'D8iRU6S4I2/FGMk8d6o22cJi6luejNXJsZbykW0eRDA=','0c1MOIxRwHJAd4WL0TjBhGzYNIk9hghN5k9K2uJUbyE=','GbV/i859G6k/XGwdA9edH/ldVvm8LQk5/1hk5SN5sEs=',0,'ishusername',1),(2,'EDWi2qpnLxuQAsrAl6J/PPQ+JIZ/r/kFwwvN+dJieCU=','+JxvcXw7fGHb7juh6Gg/otgZlRV1RRib2medGcZLPhU=','5n+Bv5bQIsstxdYZOM/eNdk4JcbIN9KypzEAK3K1bIg=',0,'ishusername',2),(3,'jH5uFx/MXdEN8nMYSNG7BnaD2q0aitEkTDh6N5puWac=','/dnVNc4SjbfCAOj+9hNrqh+XaefRzbJI3Yra38HbeY8=','4Qn19SQPWgfb1dRlxjxRsoLzYqQZeQQ4TGe0GqYxWX4=',0,'ishusername',3),(4,'YycfQqdv2UN53lXWLVM90HwayzOCMDQRvaQUK8qsxAY=','Xwya6zgrvRpum1X80CQ/zj91N4AUZl2P3HCkkzTFc7A=','aLWFxsSsRlua3WJn/CC5UkbVUAi+LP/d9OjwlYsXiZE=',0,'ishusername',4),(5,'4uO3nXQ8+bbr+XCtvB5QvZYdQYMBzypUuVjkyTl/vT8=','GRStikCZIRnmGmqwcoLPY/zimGmP80oLhlSYv103JUY=','TG5ImLuIhyQIOri3q5VF1PDjcALlanCIsjJx02yJsrk=',0,'ishusername',5),(6,'c2rraDqWW6s/HbodCrtpyDTdXRk/Qsg/9FnAhrWPQ2k=','IJ9PmTDDjknAWQfEL0sKbT4oVt/v2TkY/oWRY0kQ48w=','hKuRaEFcT+XjxlZsm9JcCu4j6KWpnhoUcRF6ZRqtMN0=',0,'ishusername',6);
 /*!40000 ALTER TABLE `a_h` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -922,12 +928,12 @@ DROP TABLE IF EXISTS `a_i`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_i` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `a` int(11) DEFAULT NULL,
+  `a` int DEFAULT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `a_g_id` int(11) unsigned DEFAULT NULL,
+  `a_g_id` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKn370i5lft12iv8uf15r35d4yq` (`a_g_id`),
   CONSTRAINT `FKn370i5lft12iv8uf15r35d4yq` FOREIGN KEY (`a_g_id`) REFERENCES `a_g` (`id`)
@@ -951,12 +957,12 @@ DROP TABLE IF EXISTS `a_j`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_j` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `a_e_id` int(11) unsigned DEFAULT NULL,
+  `a_e_id` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_b_a_e_id` (`b`,`a_e_id`),
   KEY `FK8ymbwwfwkrvox2rl9gg6yvf9x` (`a_e_id`),
@@ -981,13 +987,13 @@ DROP TABLE IF EXISTS `a_k`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_k` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_a` (`a`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -996,7 +1002,7 @@ CREATE TABLE `a_k` (
 
 LOCK TABLES `a_k` WRITE;
 /*!40000 ALTER TABLE `a_k` DISABLE KEYS */;
-INSERT INTO `a_k` VALUES (1,'DJYWrMmUz2QnjnG8IT2NtIAvtrBlWZ9aPDZa89utalM=','TNV/3V5uP+b0RRGBohFCab4yxoVuoZRcR3adDhFD8YY=','PATIENTLIST'),(2,'aoPc9FRM89TZCadzUJw+/2O8X6zHQ67DtUm7GuhT1Mg=','uU/Z5Cjv5MUw2P6wFYiXmDIX2m0j7sakXF1SwSTjJ9s=','NEWPATIENT'),(3,'OR16YvqnEGGOc1su8ofohE8JJ4Uiwi1RrNmaPP776ak=','DcbiSesiAjhhAyo+FH8/whEjpaC2DJNBcpfLp66h1R0=','SCAN'),(4,'fkjfolwyu6udygn5Vb69g8v92Wd05F6LyOwLB4fETx8=','NvInrUZoeehIucFzMmCS8IdKLU4rvcleHsBRAZ4ff48=','STORAGEMNGT'),(5,'aQok52mEUmondpOPB10u5/DMG32+fNQcrEnxt4FC69w=','RxzNlLyJkEs96GcYDWXsITfBMbV6Z//0+J9UeJ90Gls=','BARCODES'),(6,'tFkulR5AFiMTq8UGHRUk1/YOme+7ns+dFLH7GrkHpcM=','qvzPIgYB6nC3YeTBJVrVRKGMZeZJTtqmgFkeslpwsvA=','SAMPLELIST'),(7,'kKSGHIdzNWrcqoXWOwP2oDWu/DxlG3BPImFAp1MC2Q8=','7BgAPE2u3aGJ/K/n1Axs/cqTDITxn8MjLi40hL3a4u4=','SEARCH'),(8,'5aCx9trj/NgQfW8O0S3mCszCQ+4ecb72gVZdabK4YtE=','GHvCkgaJnsUSnWJCclEVfgw3AvZ2j6QhEBWouZvKOEs=','EXPORT'),(9,'ujFAHF7wvK3g36b7VetzWykfB/Xy2tl1QncaFVTxfvA=','75p+H/lVU5RxuoGGojHzkboIGJuOxBn48wR5wJ/Zyrw=','RESTRICTEDFORMS'),(10,'XHWh641u1vke4m/jUAhG/fEnyAEt27Js7xSxRKuBmS8=','IxaWuNV8IRDmBIs+pD9XUEndQXob2JPVeHc9x7rICsw=','TIMERESTRICTEDFORMS'),(11,'i2Cc8PA8IEL9bM7SQ88XFkAqwCYjqSs+TH3XFncbWvA=','mw4krLrXIMoXyh7yVrQH9xGUydJUp8MvFISUR0BjYoU=','FORMEDIT'),(12,'Dj5M5YhET3N17ToUit/J6KhUsvJo0z2f94oykeDKvvM=','2IxWxjq1xUSWMLF7JQ/0Jv7kuKFz4UCZxydcgOuFOtc=','VISITEDIT'),(13,'n7MqkRlMogMsFmFROnYc3TqqE5Q8mqL8qph6DigyTqk=','J1DmoylSTecm8lgX7ZlacQhMyJp7RyJUTkkPMDMCUG4=','TABLEVIEWMDAT'),(14,'RU5UI84LrOlJ4KuYbdJN2qn+6ZOBqAtLSLR5MEvnzpo=','zk5E2ygAGR3rQUIUQXYQVWibKyzGQNkMBMf2aicUmQA=','EXPORTPATIENTNAMES'),(15,'l2BjqAFAfBaugYlAJem8L/CEJzxephNF9cZVRmkUMu8=','mwAagpzw4S2I+sOjIupMUjb1KINbfY41wQCZC7NAATs=','PSEUDONYMOUSINPUT'),(16,'JsTfSvsJMTMqX2LsyW46RTF0JTWig221E0jn5bCdZXI=','FQu2gmqoLeIqO2OnKwZrkWiCdTz3O3/vVgiYQaqw2lE=','DELETEPATIENT'),(17,'Mh5CYI9BSLG2NbTvwXFbDW2abinoPY8XGJ5RhzKMNEE=','uLDhiPlISFJgQhHlodQBg+EzxlS68u6po/D01gQcMyg=','STATISTICS'),(18,'mwKiD80flvvzfIu8qeKlQ/am63HLGaZ0wxRaIDZXRLQ=','bKFVPFhckcNK504vkmS3wfOtXhwBX5CV63JyJ9LxMoA=','CONTACTS'),(19,'ZA9am9kWArrTSCjWCNkAqYMzjOzmaAdMtXtYztfdksE=','5aKtS5yB3Ix8JXr32UIncC5QoGcZU79fO6Nscl3Pvu4=','SHOWPATIENTNAMES'),(20,'MUk06aASwQghE8o7vUYXMMLUgj9AX3bXUIs/5GEBCe8=','NUX3Totksp3dVzBvXmI2/pjIxHMTsDasvtN2XtcjgTs=','SINGLESHOTFORM'),(21,'cCwO0RlAbFCqhfIPuKStEzjbMIYEjA2e7Qm2q/VfUgc=','akOXhmEJ1ND9m7bZHTFzQ/3Tz6KmGZseTEhQNX7TEXM=','TIMERESTRICTEDFORMSOVERRIDE'),(22,'4D76V945WwvWqcan26OGdZOor6YnC4DCkdVTry9Zg3Y=','ehlqIZz/ZDdnorLSzein9Qed9ZOcCbDfuf8+Rz0XJSc=','SIGNFORMS'),(23,'U+5dmakjYz90qTTBNqH2B/JCw/RGVehOAZhonQeUMzU=','qfWAmnLv21JTUc7fe2VjXMEOYgn+egMDjZOpmSqpGfc=','LOCKFORMS');
+INSERT INTO `a_k` VALUES (1,'0QNrKr+gWUgb83X2pOoqE/vZbdoUBuaxaR5Ylyg3MEY=','zib3LgnFpOufu/Ol0lUcpDkytVq7A5fEepNxiXUDpJE=','PATIENTLIST'),(2,'8yuveWjrEEo7jX4JJzD/TsnfUU3z6R89UgILZFFX+4g=','RYHJBivxh6xkzp+svsEs5FYkOias0cG6YnL590jo7Z8=','NEWPATIENT'),(3,'lbHklPuBuH1ECSlNmwKSh+/O0Dx7BYrqWDfR9Umiqo0=','XTvdp+7mMSp499FSCL/D0lcWTh4CTQXoAGAesGkXUic=','SCAN'),(4,'lYdBrSOa/BOhkDyozuhnVOyl739h2A7Er56gEfiz8Mg=','Eut0x8GPLkjzEJlWKW1yE94BdU3TgytNznU3R4JLP7Q=','STORAGEMNGT'),(5,'MiEQCdIvhx/ilLIIgtcjHqwQ9SruIz0kGdBLMDi/FYk=','iPv4Z9Ca1oW8x7WR7gBma6N5NjrVQVXpVsyEKmo8Zvg=','BARCODES'),(6,'ikQfQvxb9bgP2HA8b5HdPfBNKJ6JnCYlHRkc+5HNnKM=','VuNJx8i8tzpDRCyjzasu3MSn+xdBWTgt1a7FpDIW6vw=','SAMPLELIST'),(7,'RprYw/83eXKVh6YC8cdW6dxQvxU2xqPXY68T7LFeskw=','/QIttXGILKhmTRv8w+3yR5P5J2OspUN7sW/iJOabfW0=','SEARCH'),(8,'Lyjq+RALtQK6I+9R/NapbA9FgMZ4mCnfIFZh1bWnT1E=','tPPiolpDuipdrCNhXSqsC3C2F1yQ8TzHzg6EeXpyEcc=','EXPORT'),(9,'RfrNwfs+u9px4414fhJ+qeWj3rolDNONmhEQrQh1EN4=','TQZwHABXfuoiAcBBaZsecVX7hpxug380udxJVOY6GT0=','RESTRICTEDFORMS'),(10,'mNtyxXIKjMNjgxknXEGBzaG2SZ7VWiwum8z9ypxnFEs=','rSvNsD2uTSvR/hy6ad40JsxidYoMd25dgu2PrJA8+zE=','TIMERESTRICTEDFORMS'),(11,'JR1NoHBkRw748Xf9wiuGXu4UnzQhQAx58PNAL7WobuA=','nm6vKmn6hYXMFWC94cepoSEV6HNFzIDpfEVXkSJYy08=','FORMEDIT'),(12,'jeK4SKGJHBE2vOPD90sqcUgLhUNtQW+lbWgq4HNCaU4=','YsZTMzip2P+Xl4MZivGhOZv9VtOjSw4FdP/TMKCpxHU=','VISITEDIT'),(13,'fkpFtwvNwIZNZapiTsUyEW6z2p2xqODF2cCyDGCdxiY=','rLml6p012lvpdcIbWWXxcitDb9Cod2yyW67bQMYIW2M=','TABLEVIEWMDAT'),(14,'JgOEJQ/sy2oJI8qAOVceMrw0DHMNGJHeitpBglz3R/M=','U7DF/2bzRLmfstWyBWzpH4v51PYSA5JBZZuN/yk6hI0=','EXPORTPATIENTNAMES'),(15,'XsA69zMiojH9f+JN5XvYnqjqGMrb/k0MKNqAZkvyhzw=','0Vj+VZRY+9W7NSrIX0NvaF/67q89IqotkP8HtIr1bsE=','PSEUDONYMOUSINPUT'),(16,'HfDgjsOBcfSqWN5Pk1wEr+S7CmcNmVNUR/AXGqHnrU8=','oyH9ErLs9ZbaBftVO8WXlpXwaksPxCYFCqiJQmJvey8=','DELETEPATIENT'),(17,'SMUjBUQn9JEt+x303hLUKAAlGbRAP7Xv6dxY+oSgYNs=','ex2SoWHUQmeoZ5O5B/9dWthx5wh0QpnDgExk49M5ZiQ=','STATISTICS'),(18,'XP8aQNCkNrySqjZljT6QLaS69PxVXFQCaRW8BPLkc6U=','aY+bM/eHZL+U/W91S+gCJ8UNK0Ne6epsB4gcqrz4fqk=','CONTACTS'),(19,'FDBpz6ojwBjSzCw129abz73f3e+liE1y+mXIP00Wqcs=','ZRWFXu8k1iUcKkLYWpodYZbvdK3khZBHUInaeRXWFZU=','SHOWPATIENTNAMES'),(20,'YUO6hIfxzkPYEa65/+r3/C3bbNFLUXNpN2wgyBy4PD4=','nGeyrBZDEuPRWR6Rou50TfyT/HyYxvymg31p8c870CA=','SINGLESHOTFORM'),(21,'SJeflL62pvAn8yXBDkO9wggI2l3loRvY6FWWFKZiBTs=','X95cvFhJ+A5TM9YwdHLMK9nKSsUwko/iWrQ0ePY081g=','TIMERESTRICTEDFORMSOVERRIDE'),(22,'Fyn7kyobaoV4WB4pMkj2GJux3WnloTHN2cCxdug5VKk=','h2znyNKLiygcOnZQF3eUaYCjCSChHMRGgmkJhZfHHBA=','SIGNFORMS'),(23,'XWKrETkeipJLxJiRmuiiY/iTEf/Z0wDEOZ+iFq/cGmM=','GgraW4Rv7PxdA0aCpjnKmHANwvV8kkUE0DABPYSDt+A=','LOCKFORMS'),(24,'ZSH2Hw+rp58wVZi0cdRiWs0FXc5NIUSbPnZ+iSjynzQ=','S/z8RqlvV9W2pbMIFvsimJSpYQMnpXmKO9VRTwIAe6A=','IMPORT');
 /*!40000 ALTER TABLE `a_k` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1008,12 +1014,12 @@ DROP TABLE IF EXISTS `a_l`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_l` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `b` int(11) unsigned DEFAULT NULL,
+  `b` int unsigned DEFAULT NULL,
   `c` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `a` int(11) unsigned DEFAULT NULL,
+  `a` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1035,14 +1041,16 @@ DROP TABLE IF EXISTS `a_m`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_m` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `doExport` bit(1) DEFAULT NULL,
   `doSearch` bit(1) DEFAULT NULL,
-  `a_e_id` int(11) unsigned DEFAULT NULL,
-  `a_f_id` int(11) unsigned DEFAULT NULL,
-  `a_g_id` int(11) unsigned DEFAULT NULL,
+  `modifyMdat` bit(1) DEFAULT NULL,
+  `modifyPdat` bit(1) DEFAULT NULL,
+  `a_e_id` int unsigned DEFAULT NULL,
+  `a_f_id` int unsigned DEFAULT NULL,
+  `a_g_id` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_a_e_id_a_f_id_a_g_id` (`a_e_id`,`a_f_id`,`a_g_id`),
   KEY `FKm85cndrpetnk3oafx1jxjils` (`a_f_id`),
@@ -1070,11 +1078,11 @@ DROP TABLE IF EXISTS `a_xx`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `a_xx` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `timestamp` bigint(20) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `timestamp` bigint NOT NULL,
   `userID` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1083,7 +1091,7 @@ CREATE TABLE `a_xx` (
 
 LOCK TABLES `a_xx` WRITE;
 /*!40000 ALTER TABLE `a_xx` DISABLE KEYS */;
-INSERT INTO `a_xx` VALUES (1,1603102790252,'-1'),(2,1603102790278,'-1'),(3,1603102790289,'-1'),(4,1603102790298,'-1'),(5,1603102790304,'-1'),(6,1603102790311,'-1'),(7,1603102790321,'-1'),(8,1603102790329,'-1'),(9,1603102790340,'-1'),(10,1603102790349,'-1'),(11,1603102790359,'-1'),(12,1603102790368,'-1'),(13,1603102790376,'-1'),(14,1603102790381,'-1'),(15,1603102790389,'-1'),(16,1603102790404,'-1'),(17,1603102790410,'-1'),(18,1603102790417,'-1'),(19,1603102790423,'-1'),(20,1603102790430,'-1'),(21,1603102790436,'-1'),(22,1603102790442,'-1'),(23,1603102790464,'-1'),(24,1603102790471,'-1'),(25,1603102790480,'-1'),(26,1603102790488,'-1'),(27,1603102790497,'-1'),(28,1603102790507,'-1'),(29,1603102790514,'-1'),(30,1603102790522,'-1'),(31,1603102790533,'-1'),(32,1603102790540,'-1'),(33,1603102790548,'-1'),(34,1603102790556,'-1'),(35,1603102790564,'-1'),(36,1603102790570,'-1'),(37,1603102790577,'-1'),(38,1603102790584,'-1'),(39,1603102790593,'-1'),(40,1603102790601,'-1'),(41,1603102790608,'-1'),(42,1603102790617,'-1'),(43,1603102790625,'-1'),(44,1603102790634,'-1'),(45,1603102790644,'-1'),(46,1603102790657,'-1'),(47,1603102790668,'-1'),(48,1603102790677,'-1'),(49,1603102790688,'-1'),(50,1603102790700,'-1'),(51,1603102790712,'-1'),(52,1603102790723,'-1'),(53,1603102790735,'-1'),(54,1603102790762,'-1'),(55,1603102790786,'-1'),(56,1603102790826,'-1'),(57,1603102790849,'-1'),(58,1603102790872,'-1'),(59,1603102790900,'-1'),(60,1603102790922,'-1'),(61,1603102790956,'-1'),(62,1603102790964,'-1'),(63,1603102790968,'-1'),(64,1603102790975,'-1'),(65,1603102790984,'-1'),(66,1603102790989,'-1'),(67,1603102791000,'-1'),(68,1603102791004,'-1'),(69,1603102791008,'-1'),(70,1603102791013,'-1'),(71,1603102791016,'-1'),(72,1603102791021,'-1'),(73,1603102791028,'-1'),(74,1603102791039,'-1'),(75,1603102791046,'-1'),(76,1603102791058,'-1'),(77,1603102791062,'-1'),(78,1603102791068,'-1'),(79,1603102791072,'-1'),(80,1603102791078,'-1'),(81,1603102791083,'-1'),(82,1603102791089,'-1'),(83,1603102791094,'-1'),(84,1603102791244,'-1'),(85,1603102791259,'-1'),(86,1603102791279,'-1'),(87,1603102791318,'-1'),(88,1603102791398,'-1'),(89,1603102791415,'-1'),(90,1603102791426,'-1'),(91,1603102791475,'-1'),(92,1603102791533,'-1'),(93,1603102791581,'-1'),(94,1603102791635,'-1');
+INSERT INTO `a_xx` VALUES (1,1625582344382,'-1'),(2,1625582344400,'-1'),(3,1625582344409,'-1'),(4,1625582344415,'-1'),(5,1625582344422,'-1'),(6,1625582344431,'-1'),(7,1625582344439,'-1'),(8,1625582344448,'-1'),(9,1625582344455,'-1'),(10,1625582344462,'-1'),(11,1625582344469,'-1'),(12,1625582344477,'-1'),(13,1625582344485,'-1'),(14,1625582344492,'-1'),(15,1625582344499,'-1'),(16,1625582344515,'-1'),(17,1625582344523,'-1'),(18,1625582344530,'-1'),(19,1625582344538,'-1'),(20,1625582344546,'-1'),(21,1625582344552,'-1'),(22,1625582344559,'-1'),(23,1625582344567,'-1'),(24,1625582344575,'-1'),(25,1625582344584,'-1'),(26,1625582344593,'-1'),(27,1625582344600,'-1'),(28,1625582344608,'-1'),(29,1625582344615,'-1'),(30,1625582344622,'-1'),(31,1625582344633,'-1'),(32,1625582344639,'-1'),(33,1625582344645,'-1'),(34,1625582344652,'-1'),(35,1625582344660,'-1'),(36,1625582344667,'-1'),(37,1625582344674,'-1'),(38,1625582344680,'-1'),(39,1625582344687,'-1'),(40,1625582344694,'-1'),(41,1625582344701,'-1'),(42,1625582344709,'-1'),(43,1625582344716,'-1'),(44,1625582344724,'-1'),(45,1625582344732,'-1'),(46,1625582344745,'-1'),(47,1625582344754,'-1'),(48,1625582344761,'-1'),(49,1625582344771,'-1'),(50,1625582344780,'-1'),(51,1625582344791,'-1'),(52,1625582344801,'-1'),(53,1625582344811,'-1'),(54,1625582344822,'-1'),(55,1625582344831,'-1'),(56,1625582344839,'-1'),(57,1625582344853,'-1'),(58,1625582344864,'-1'),(59,1625582344875,'-1'),(60,1625582344888,'-1'),(61,1625582344900,'-1'),(62,1625582344904,'-1'),(63,1625582344907,'-1'),(64,1625582344911,'-1'),(65,1625582344915,'-1'),(66,1625582344917,'-1'),(67,1625582344919,'-1'),(68,1625582344922,'-1'),(69,1625582344925,'-1'),(70,1625582344928,'-1'),(71,1625582344929,'-1'),(72,1625582344932,'-1'),(73,1625582344935,'-1'),(74,1625582344938,'-1'),(75,1625582344940,'-1'),(76,1625582344943,'-1'),(77,1625582344946,'-1'),(78,1625582344948,'-1'),(79,1625582344951,'-1'),(80,1625582344954,'-1'),(81,1625582344957,'-1'),(82,1625582344961,'-1'),(83,1625582344964,'-1'),(84,1625582344967,'-1'),(85,1625582345045,'-1'),(86,1625582345051,'-1'),(87,1625582345062,'-1'),(88,1625582345087,'-1'),(89,1625582345134,'-1'),(90,1625582345142,'-1'),(91,1625582345159,'-1'),(92,1625582345202,'-1'),(93,1625582345247,'-1'),(94,1625582345286,'-1'),(95,1625582345326,'-1');
 /*!40000 ALTER TABLE `a_xx` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1095,12 +1103,12 @@ DROP TABLE IF EXISTS `b_a`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `b_a` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `a_e_id` int(11) unsigned NOT NULL,
+  `a_e_id` int unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_a` (`a`),
   UNIQUE KEY `UK_b` (`b`),
@@ -1125,12 +1133,12 @@ DROP TABLE IF EXISTS `b_b`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `b_b` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `a_e_id` int(11) unsigned NOT NULL,
+  `a_e_id` int unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_a` (`a`),
   UNIQUE KEY `UK_b` (`b`),
@@ -1155,14 +1163,14 @@ DROP TABLE IF EXISTS `b_c`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `b_c` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `c` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `d` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `a_e_id` int(11) unsigned NOT NULL,
+  `a_e_id` int unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_a` (`a`),
   UNIQUE KEY `UK_b` (`b`),
@@ -1189,12 +1197,12 @@ DROP TABLE IF EXISTS `b_d`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `b_d` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `a` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `b` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `a_e_id` int(11) unsigned NOT NULL,
+  `a_e_id` int unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_a` (`a`),
   UNIQUE KEY `UK_b` (`b`),
@@ -1219,7 +1227,7 @@ DROP TABLE IF EXISTS `loginlog`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `loginlog` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `xa` char(44) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xb` char(44) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ip` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -1247,4 +1255,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-19 12:25:05
+-- Dump completed on 2021-07-06 16:41:36

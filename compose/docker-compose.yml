@@ -13,7 +13,7 @@ services:
             - ${BASE_PATH}/${COMPOSE_PROJECT_NAME}/app/logs:/usr/local/tomcat/logs
             - ${BASE_PATH}/${COMPOSE_PROJECT_NAME}/app/disconf:/usr/local/tomcat/disconf
             - ${BASE_PATH}/${COMPOSE_PROJECT_NAME}/disfiles:/disfiles
-            - ${BASE_PATH}/${COMPOSE_PROJECT_NAME}/keystore/myTrustStore:/usr/local/tomcat/myTrustStore:ro
+            - ${BASE_PATH}/${COMPOSE_PROJECT_NAME}/keystore/myTrustStore:/usr/local/tomcat/disconf/myTrustStore:ro
         ports:
             - "443:8443"
         networks:
